@@ -1,0 +1,1392 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>From LOL to Lowkey</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Onest:wght@400;500;600;700;800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400;1,7..72,500&display=swap" rel="stylesheet">
+<style>
+/* Layout concept: slang first. A short navy hero hands the reader straight to the dictionary;
+   practice tools (checker, quiz, chat-to-essay) follow, research and sources close the page.
+   Slang is set in Onest (chat voice), formal English in Literata (essay voice), headlines in Unbounded. */
+:root{
+  --ink:#071230; --navy:#0C1F4D; --navy-2:#14306F; --royal:#2A52C9; --electric:#5B8DFF; --sky:#9DBBFF;
+  --ice:#E6EEFF; --mist:#F4F7FF; --paper:#FFFFFF; --line:#D3DFF7; --text:#0C1F4D; --muted:#51628C;
+  --f-display:"Unbounded","Onest",system-ui,sans-serif;
+  --f-body:"Onest",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-serif:"Literata",Georgia,"Times New Roman",serif;
+  --nav-h:64px; color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--mist);color:var(--text);font-family:var(--f-body);font-size:16px;line-height:1.55;-webkit-text-size-adjust:100%}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--ink);z-index:60}
+h1,h2,h3,p{margin:0}
+button,input,select,textarea{font:inherit;color:inherit}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--electric);outline-offset:2px;border-radius:6px}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+section,#tools{scroll-margin-top:calc(var(--nav-h) + 8px)}
+.band{padding-block:clamp(44px,6vw,88px)}
+.eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--royal)}
+.dark .eyebrow,.about .eyebrow{color:var(--sky)}
+h2.h{font-family:var(--f-display);font-weight:700;font-size:clamp(1.65rem,3.6vw,2.55rem);line-height:1.12;letter-spacing:-.02em;text-wrap:balance;margin-top:10px}
+.lead{max-width:64ch;color:var(--muted);font-size:1.05rem;margin-top:12px}
+.lead:empty{display:none}
+.dark .lead{color:#B8C8F0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:-999px;top:8px;z-index:100;background:#fff;color:var(--navy);padding:10px 16px;border-radius:10px;font-weight:700}
+.skip:focus{left:12px}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(7,18,48,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08);color:#fff}
+.nav .wrap{height:var(--nav-h);display:flex;align-items:center;gap:18px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--f-display);font-weight:700;font-size:.9rem;letter-spacing:-.01em;white-space:nowrap}
+.links{display:flex;gap:4px;margin-left:auto}
+.links a{text-decoration:none;font-weight:600;font-size:.92rem;padding:8px 12px;border-radius:999px;color:#C9D6F7}
+.links a:hover{background:rgba(255,255,255,.1);color:#fff}
+.lang{display:inline-flex;background:rgba(255,255,255,.1);border-radius:999px;padding:3px}
+.lang button{border:0;background:none;cursor:pointer;font-weight:700;font-size:.8rem;padding:6px 11px;border-radius:999px;color:#C9D6F7}
+.lang button[aria-pressed="true"]{background:#fff;color:var(--navy)}
+.menu-b{display:none;border:1px solid rgba(255,255,255,.25);background:none;color:#fff;border-radius:999px;padding:7px 14px;font-weight:600;cursor:pointer}
+@media (max-width:900px){
+  .links{display:none;position:absolute;left:0;right:0;top:var(--nav-h);flex-direction:column;background:var(--ink);padding:10px max(16px,env(safe-area-inset-left,0px)) 16px;border-bottom:1px solid rgba(255,255,255,.1)}
+  .links.open{display:flex}
+  .links a{padding:12px 14px;font-size:1rem}
+  .menu-b{display:inline-block;margin-left:auto}
+}
+
+/* hero */
+.hero{position:relative;overflow:hidden;color:#fff;background:
+  radial-gradient(820px 460px at 88% 0%,rgba(91,141,255,.38),transparent 62%),
+  radial-gradient(640px 460px at 0% 100%,rgba(42,82,201,.42),transparent 62%),var(--ink);
+  padding-block:clamp(32px,5vw,64px) clamp(36px,5vw,60px)}
+.hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1.2px);background-size:26px 26px;mask-image:linear-gradient(180deg,#000,transparent 85%);-webkit-mask-image:linear-gradient(180deg,#000,transparent 85%);pointer-events:none}
+.hero .wrap{position:relative;z-index:1}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(28px,5vw,60px);align-items:center}
+@media (max-width:960px){.hero-grid{grid-template-columns:minmax(0,1fr)}.hero .pv-col{display:none}}
+[hidden]{display:none!important}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);font-size:.8rem;font-weight:600;color:#D5E1FF}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--electric);box-shadow:0 0 0 4px rgba(91,141,255,.25)}
+h1{font-family:var(--f-display);font-weight:800;font-size:clamp(2.4rem,6.4vw,4.6rem);line-height:1;letter-spacing:-.035em;margin-top:20px}
+h1 em{font-style:normal;color:var(--electric);background:linear-gradient(transparent 82%,rgba(91,141,255,.35) 82%);padding-right:.04em}
+.hero .sub{font-size:clamp(1.02rem,1.5vw,1.18rem);color:#C3D2F6;max-width:54ch;margin-top:18px}
+.hs{display:flex;gap:10px;margin-top:26px;max-width:560px}
+.hs input{flex:1 1 auto;min-width:0;height:58px;border-radius:999px;border:2px solid rgba(255,255,255,.2);background:rgba(255,255,255,.95);color:var(--navy);padding:0 22px;font-size:1.08rem;font-weight:600}
+.hs input::placeholder{color:#6B7DA8;font-weight:500}
+.hs input:focus{outline:none;border-color:var(--electric);box-shadow:0 0 0 4px rgba(91,141,255,.35)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;font-weight:700;padding:14px 22px;border-radius:999px;border:2px solid transparent;cursor:pointer;transition:transform .15s,background .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.primary{background:var(--electric);color:#fff;box-shadow:0 10px 30px rgba(91,141,255,.4)}
+.btn.primary:hover{background:#7AA2FF}
+.btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+.btn.solid{background:var(--navy);color:#fff}
+.btn.solid:hover{background:var(--royal)}
+.try{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:16px}
+.try>span{font-size:.85rem;color:#A9BCEB;font-weight:600}
+.try button{border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.07);color:#fff;border-radius:999px;padding:6px 14px;font-weight:700;font-size:.9rem;cursor:pointer}
+.try button:hover{background:rgba(255,255,255,.16)}
+.hero .meta{display:flex;flex-wrap:wrap;gap:6px 26px;margin-top:26px;color:#A9BCEB;font-size:.9rem}
+.hero .meta b{color:#fff;font-family:var(--f-display);font-weight:700;margin-right:6px}
+.pv-col{display:grid;gap:12px}
+.pv{display:block;width:calc(100% - 36px);text-align:left;border:0;cursor:pointer;background:#fff;color:var(--text);border-radius:18px;padding:16px 18px;box-shadow:0 18px 50px rgba(0,0,0,.28);transition:transform .2s}
+.pv:nth-child(even){margin-left:36px}
+.pv:nth-child(odd){margin-right:auto}
+.pv:hover{transform:translateY(-3px)}
+.pv small{display:block;font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--royal)}
+.pv b{display:block;font-weight:800;font-size:1.45rem;letter-spacing:-.02em;margin-top:2px}
+.pv span{display:block;color:#3B4D7A;font-size:.93rem;margin-top:2px}
+
+/* dictionary */
+.guide{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:26px;list-style:none;padding:0}
+@media (max-width:760px){.guide{grid-template-columns:minmax(0,1fr)}}
+.guide li{display:grid;grid-template-columns:34px minmax(0,1fr);gap:12px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+.guide b.n{width:34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:.9rem}
+.guide strong{display:block}
+.guide span{color:var(--muted);font-size:.93rem}
+.tools{background:rgba(244,247,255,.95);backdrop-filter:blur(8px);border-block:1px solid var(--line);padding-block:14px;margin-top:26px}
+@media (min-width:900px) and (min-height:760px){.tools{position:sticky;top:calc(var(--nav-h) + env(safe-area-inset-top,0px));z-index:20}}
+.tools-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.search{flex:1 1 320px;position:relative;min-width:0}
+.search svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--muted)}
+.search input{width:100%;height:52px;border-radius:999px;border:2px solid var(--line);background:#fff;padding:0 48px;font-size:1.05rem;font-weight:500}
+.search input:focus{outline:none;border-color:var(--royal);box-shadow:0 0 0 4px rgba(42,82,201,.15)}
+.search .x{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;border:0;background:var(--ice);cursor:pointer;color:var(--navy);font-weight:800}
+.search .x[hidden]{display:none}
+.tg{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 18px;border-radius:999px;border:2px solid var(--line);background:#fff;cursor:pointer;font-weight:700;font-size:.92rem}
+.tg i{width:34px;height:20px;border-radius:999px;background:var(--line);position:relative;transition:background .2s}
+.tg i::after{content:"";position:absolute;left:3px;top:3px;width:14px;height:14px;border-radius:50%;background:#fff;transition:transform .2s}
+.tg[aria-pressed="true"]{border-color:var(--royal);background:var(--ice)}
+.tg[aria-pressed="true"] i{background:var(--royal)}
+.tg[aria-pressed="true"] i::after{transform:translateX(14px)}
+.sel{height:52px;border-radius:999px;border:2px solid var(--line);background:#fff;padding:0 16px;font-weight:600;font-size:.92rem;cursor:pointer}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+@media (max-width:700px){.chips{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px}}
+.tchip{flex:none;display:inline-flex;align-items:center;gap:8px;border:2px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;font-weight:700;font-size:.9rem;cursor:pointer;white-space:nowrap}
+.tchip:hover{border-color:var(--royal)}
+.tchip small{font-weight:700;font-size:.75rem;background:var(--ice);color:var(--navy-2);border-radius:999px;padding:1px 8px}
+.tchip[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.tchip[aria-pressed="true"] small{background:rgba(255,255,255,.18);color:#fff}
+.tpanel{margin-top:20px;border:1px solid var(--line);background:#fff;border-radius:18px;padding:16px 20px;display:grid;gap:4px}
+.tpanel .k{font-size:.75rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--royal)}
+.tpanel h3{font-family:var(--f-display);font-weight:600;font-size:1.1rem;letter-spacing:-.01em}
+.tpanel p{color:var(--muted);max-width:75ch}
+.count{margin-top:18px;color:var(--muted);font-weight:600;font-size:.95rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr));gap:16px;margin-top:12px}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:10px;min-width:0;transition:transform .18s,border-color .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);border-color:var(--electric);box-shadow:0 14px 34px rgba(12,31,77,.12)}
+.card header{display:flex;justify-content:space-between;align-items:center;gap:8px;min-height:26px}
+.badge{display:inline-flex;align-items:center;gap:7px;font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--navy-2)}
+.badge i{width:9px;height:9px;border-radius:50%;background:var(--c,var(--royal))}
+.now{font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:var(--electric);color:#fff;border-radius:999px;padding:3px 9px}
+.word{font-family:var(--f-body);font-weight:800;font-size:1.55rem;line-height:1.15;letter-spacing:-.02em;overflow-wrap:anywhere}
+.word.sym{font-size:2.1rem;line-height:1.1}
+.mean{color:#2B3D6B}
+.lab{display:block;font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+.bubble{background:var(--ice);color:var(--navy);border-radius:14px 14px 14px 4px;padding:9px 13px;font-size:.95rem;overflow-wrap:anywhere}
+.formal{margin-top:auto;padding-top:10px;border-top:1px dashed var(--line)}
+.formal p{font-family:var(--f-serif);font-style:italic;color:var(--navy-2)}
+.more{display:flex;justify-content:center;margin-top:26px}
+.empty{text-align:center;padding:40px 16px;background:#fff;border:2px dashed var(--line);border-radius:20px;margin-top:12px}
+.empty p{font-weight:600;margin-bottom:12px}
+.dym{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:16px}
+.dym button{border:2px solid var(--line);background:var(--mist);border-radius:999px;padding:6px 14px;font-weight:700;cursor:pointer}
+.note{margin-top:24px;color:var(--muted);font-size:.9rem;max-width:80ch}
+
+/* checker */
+.chk{background:var(--paper)}
+.ck-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:30px}
+@media (max-width:860px){.ck-grid{grid-template-columns:minmax(0,1fr)}}
+.ck-col{border:1px solid var(--line);background:var(--mist);border-radius:22px;padding:clamp(16px,2.5vw,24px);display:flex;flex-direction:column;gap:12px;min-width:0}
+.ck-h{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;align-items:center;font-weight:700}
+.ck-h .b{display:flex;gap:8px;flex-wrap:wrap}
+.mini{border:2px solid var(--line);background:#fff;border-radius:999px;padding:6px 14px;font-weight:700;font-size:.85rem;cursor:pointer}
+.mini:hover:not(:disabled){border-color:var(--royal)}
+.mini:disabled{opacity:.5;cursor:default}
+.mini.pri{background:var(--navy);border-color:var(--navy);color:#fff}
+textarea.ta{width:100%;min-height:210px;border:2px solid var(--line);border-radius:16px;background:#fff;padding:14px 16px;font-size:1.02rem;line-height:1.6;resize:vertical}
+textarea.ta:focus{outline:none;border-color:var(--royal);box-shadow:0 0 0 4px rgba(42,82,201,.15)}
+.ck-view{min-height:210px;border-radius:16px;background:#fff;border:2px solid var(--line);padding:14px 16px;white-space:pre-wrap;overflow-wrap:anywhere;font-size:1.02rem;line-height:1.7}
+.ck-view .empty-t{color:var(--muted)}
+mark{border-radius:6px;padding:1px 4px;color:inherit}
+mark.m1{background:#CFE0FF;box-shadow:inset 0 -2px 0 var(--royal)}
+mark.m2{background:#fff;box-shadow:inset 0 0 0 2px var(--electric)}
+.score{display:inline-flex;align-items:center;gap:8px;font-size:.85rem;font-weight:700;color:var(--navy-2)}
+.score i{display:inline-block;width:70px;height:8px;border-radius:999px;background:var(--line);overflow:hidden;vertical-align:middle}
+.score i b{display:block;height:100%;background:var(--royal)}
+.ck-list{display:grid;gap:8px}
+.ck-item{display:grid;grid-template-columns:minmax(0,1fr) 22px minmax(0,1fr);gap:8px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:.95rem}
+.ck-item .f{font-weight:800;overflow-wrap:anywhere}
+.ck-item .s{font-family:var(--f-serif);font-style:italic;color:var(--navy-2);overflow-wrap:anywhere}
+.ck-item .s.man{font-family:var(--f-body);font-style:normal;color:var(--muted)}
+.ck-item small{grid-column:1/-1;color:var(--muted);font-size:.78rem;font-weight:700;letter-spacing:.04em}
+.ck-note{color:var(--muted);font-size:.88rem}
+
+/* quiz */
+.quiz{background:radial-gradient(700px 400px at 100% 0%,rgba(91,141,255,.3),transparent 60%),var(--navy);color:#fff}
+.qmodes{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:26px}
+.seg{display:inline-flex;background:rgba(255,255,255,.1);border-radius:999px;padding:4px}
+.seg button{border:0;background:none;cursor:pointer;font-weight:700;font-size:.9rem;padding:8px 16px;border-radius:999px;color:#C9D6F7}
+.seg button[aria-pressed="true"]{background:#fff;color:var(--navy)}
+.quiz-box{margin-top:18px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:26px;padding:clamp(20px,4vw,38px);max-width:820px}
+.quiz-box .desc{color:#B8C8F0;margin-bottom:18px}
+.prog{height:8px;border-radius:999px;background:rgba(255,255,255,.14);overflow:hidden}
+.prog i{display:block;height:100%;background:var(--electric);border-radius:999px;transition:width .3s}
+.q-meta{display:flex;justify-content:space-between;gap:12px;margin-bottom:12px;font-weight:700;font-size:.9rem;color:#B8C8F0}
+.q-word{font-family:var(--f-display);font-weight:800;font-size:clamp(1.8rem,5vw,2.9rem);letter-spacing:-.03em;margin:22px 0 6px;overflow-wrap:anywhere}
+.q-ask{color:#B8C8F0}
+.opts{display:grid;gap:10px;margin-top:20px}
+.opt{text-align:left;border:2px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:#fff;border-radius:16px;padding:13px 18px;font-weight:600;cursor:pointer;display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;align-items:center}
+.opt:hover:not(:disabled){background:rgba(255,255,255,.14);border-color:var(--sky)}
+.opt b{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.14);display:grid;place-items:center;font-size:.8rem}
+.opt.ok{background:#fff;color:var(--navy);border-color:#fff}
+.opt.ok b{background:var(--royal);color:#fff}
+.opt.bad{background:rgba(255,255,255,.04);border-style:dashed;color:#9FB2E4;text-decoration:line-through}
+.opt:disabled{cursor:default}
+.fb{margin-top:18px;background:#fff;color:var(--text);border-radius:18px;padding:16px 18px}
+.fb strong{font-family:var(--f-display);font-weight:600}
+.fb p{margin-top:6px;color:var(--muted)}
+.fb .bubble{display:inline-block;margin-top:6px}
+.fb .fm{font-family:var(--f-serif);font-style:italic;color:var(--navy-2)}
+.q-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+.qscore{font-family:var(--f-display);font-weight:800;font-size:clamp(3rem,9vw,5.2rem);letter-spacing:-.04em;line-height:1}
+.qscore small{font-size:.4em;color:var(--sky)}
+.review{display:grid;gap:10px;margin-top:20px}
+.review div{background:rgba(255,255,255,.08);border-radius:14px;padding:12px 16px}
+.review span{color:#B8C8F0}
+
+/* chat to essay */
+.reg-sec{background:var(--mist)}
+.reg-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,4vw,48px);align-items:start;margin-top:30px}
+@media (max-width:900px){.reg-grid{grid-template-columns:minmax(0,1fr)}}
+.reg{background:var(--navy);color:#fff;border-radius:26px;padding:clamp(14px,2vw,20px)}
+.reg-top{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+.reg-top p{font-weight:700;font-size:.92rem;color:#E3ECFF}
+.stage{margin-top:16px;padding:20px 22px 22px;min-height:150px;transition:background .4s,color .4s,border-radius .4s}
+.stage .tag{display:block;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px;opacity:.75}
+.stage .msg{transition:opacity .16s}
+.stage.swap .msg{opacity:0}
+.reg[data-mode="chat"] .stage{background:var(--royal);color:#fff;border-radius:24px 24px 24px 6px;font-size:clamp(1.05rem,2vw,1.2rem);line-height:1.5;font-weight:500}
+.reg[data-mode="essay"] .stage{background:#fff;color:var(--ink);border-radius:8px;font-family:var(--f-serif);font-size:clamp(1.02rem,1.9vw,1.15rem);line-height:1.65}
+.tok{font:inherit;color:inherit;border:0;padding:0 5px;border-radius:7px;margin:0 -1px}
+.reg[data-mode="chat"] .tok{background:rgba(255,255,255,.2);box-shadow:inset 0 -2px 0 rgba(255,255,255,.65);cursor:pointer}
+.reg[data-mode="chat"] .tok:hover{background:rgba(255,255,255,.32)}
+.reg[data-mode="essay"] .tok{background:var(--ice);color:var(--navy-2);font-style:italic}
+.reg-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-top:14px}
+.reg-foot p{font-size:.85rem;color:#B3C5F0;min-width:0;flex:1 1 200px}
+.link-b{background:none;border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:999px;padding:8px 14px;font-weight:600;font-size:.85rem;cursor:pointer}
+.link-b:hover{background:rgba(255,255,255,.1)}
+.pair-h{display:grid;grid-template-columns:minmax(0,1fr) 22px minmax(0,1.2fr);gap:8px;padding:0 14px;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.pairs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:10px}
+@media (max-width:560px){.pairs{grid-template-columns:minmax(0,1fr)}}
+.pair{display:grid;grid-template-columns:minmax(0,1fr) 22px minmax(0,1.2fr);align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:11px 14px;text-align:left;cursor:pointer}
+.pair:hover{border-color:var(--electric)}
+.pair .c{font-weight:800;overflow-wrap:anywhere}
+.pair .e{font-family:var(--f-serif);font-style:italic;color:var(--navy-2);overflow-wrap:anywhere}
+.pair svg{color:var(--electric)}
+.rule{margin-top:16px;font-family:var(--f-serif);font-style:italic;color:var(--navy-2);max-width:60ch}
+.proof{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:26px}
+@media (max-width:980px){.proof{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.proof{grid-template-columns:minmax(0,1fr)}}
+.proof div{background:var(--navy);color:#fff;border-radius:16px;padding:16px}
+.proof strong{display:block;font-family:var(--f-display);font-weight:600;font-size:.92rem;margin-bottom:6px}
+.proof span{color:#B8C8F0;font-size:.9rem}
+.h3s{font-family:var(--f-display);font-weight:600;font-size:1.1rem;letter-spacing:-.01em;margin-top:36px}
+
+/* research */
+.research{background:var(--paper)}
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:30px}
+@media (max-width:820px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.tiles{grid-template-columns:minmax(0,1fr)}}
+.tile{border-radius:20px;padding:22px;background:var(--mist);border:1px solid var(--line)}
+.tile.hi{background:var(--navy);border-color:var(--navy);color:#fff}
+.tile b{display:block;font-family:var(--f-display);font-weight:800;font-size:clamp(2rem,4.2vw,2.9rem);letter-spacing:-.04em;line-height:1}
+.tile span{display:block;margin-top:10px;font-size:.95rem;color:var(--muted)}
+.tile.hi span{color:#B8C8F0}
+.charts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+@media (max-width:900px){.charts{grid-template-columns:minmax(0,1fr)}}
+.chart{border:1px solid var(--line);border-radius:22px;padding:clamp(18px,3vw,28px);background:#fff}
+.chart.wide{grid-column:1/-1}
+.chart h3{font-family:var(--f-display);font-weight:600;font-size:1rem;letter-spacing:-.01em;margin-bottom:4px}
+.chart .sub{color:var(--muted);font-size:.9rem;margin-bottom:16px}
+.key{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:14px;font-size:.85rem;font-weight:600}
+.key i{display:inline-block;width:12px;height:12px;border-radius:4px;margin-right:6px;vertical-align:-1px}
+.rows{display:grid;gap:12px}
+.rw{display:grid;grid-template-columns:minmax(96px,170px) minmax(0,1fr);gap:14px;align-items:center}
+@media (max-width:560px){.rw{grid-template-columns:minmax(0,1fr);gap:6px}}
+.rw .l{font-weight:600;font-size:.93rem}
+.tr{display:grid;gap:5px}
+.bar{display:flex;align-items:center;gap:10px}
+.bar .t{flex:1 1 auto;height:14px;border-radius:999px;background:var(--ice);overflow:hidden;min-width:0}
+.bar .t i{display:block;height:100%;border-radius:999px;background:var(--c,var(--royal))}
+.bar em{font-style:normal;font-weight:800;font-size:.85rem;width:52px;text-align:right;font-variant-numeric:tabular-nums}
+.stackb{display:flex;height:44px;border-radius:14px;overflow:hidden;margin:6px 0 14px}
+.stackb i{display:grid;place-items:center;color:#fff;font-style:normal;font-weight:800;font-size:.9rem;min-width:0}
+.ok-tag{font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:var(--navy);color:#fff;border-radius:999px;padding:2px 8px;margin-left:6px;vertical-align:1px}
+.verdict{margin-top:24px;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:18px}
+@media (max-width:820px){.verdict{grid-template-columns:minmax(0,1fr)}}
+.verdict .big{background:var(--navy);color:#fff;border-radius:24px;padding:clamp(22px,4vw,34px)}
+.verdict .big p{font-family:var(--f-display);font-weight:700;font-size:clamp(1.2rem,2.5vw,1.65rem);line-height:1.25;letter-spacing:-.02em;text-wrap:balance}
+.verdict .lim{border:2px dashed var(--line);border-radius:24px;padding:clamp(20px,3vw,28px);color:var(--muted)}
+.verdict .lim .eyebrow{display:block;margin-bottom:8px}
+.poll{margin-top:44px;background:var(--mist);border:1px solid var(--line);border-radius:26px;padding:clamp(20px,4vw,36px)}
+.poll h3{font-family:var(--f-display);font-weight:700;font-size:clamp(1.2rem,2.4vw,1.6rem);letter-spacing:-.02em}
+.poll .pl{color:var(--muted);margin-top:8px}
+.pq{margin-top:22px}
+.pq h4{margin:0 0 10px;font-size:1rem}
+.po{display:grid;gap:8px}
+.po button{display:grid;grid-template-columns:minmax(90px,170px) minmax(0,1fr) auto;gap:12px;align-items:center;text-align:left;border:2px solid var(--line);background:#fff;border-radius:14px;padding:10px 14px;cursor:pointer;font-weight:600}
+@media (max-width:560px){.po button{grid-template-columns:minmax(0,1fr) auto}.po .pt{grid-column:1/-1;order:3}}
+.po button:hover:not([aria-disabled="true"]){border-color:var(--royal)}
+.po button[aria-pressed="true"]{border-color:var(--navy);background:var(--ice)}
+.po .pt{height:10px;border-radius:999px;background:var(--ice);overflow:hidden}
+.po .pt i{display:block;height:100%;background:var(--royal);border-radius:999px}
+.po em{font-style:normal;font-size:.85rem;font-variant-numeric:tabular-nums;color:var(--navy-2);min-width:70px;text-align:right}
+.po .you{font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:var(--navy);color:#fff;border-radius:999px;padding:2px 8px;margin-left:6px}
+.poll .pn{margin-top:18px;color:var(--muted);font-size:.85rem}
+
+/* about */
+.about{background:var(--ink);color:#fff}
+.about .cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,5vw,56px);margin-top:30px}
+@media (max-width:860px){.about .cols{grid-template-columns:minmax(0,1fr)}}
+.about dl{margin:0;display:grid;gap:16px}
+.about dt{font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--sky)}
+.about dd{margin:3px 0 0;font-size:1.05rem}
+.about h3{font-family:var(--f-display);font-weight:600;font-size:1.05rem;margin-bottom:14px}
+.about ol{margin:0;padding-left:20px;color:#C3D2F6;display:grid;gap:8px}
+.about ol.src{font-size:.88rem;color:#AFC1EE}
+.about a{color:#fff;text-underline-offset:3px}
+.foot{padding-block:22px;border-top:1px solid rgba(255,255,255,.1);margin-top:40px;color:#9FB2E4;font-size:.85rem;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+.totop{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;width:46px;height:46px;border-radius:50%;border:0;background:var(--navy);color:#fff;cursor:pointer;box-shadow:0 10px 30px rgba(7,18,48,.35);display:grid;place-items:center}
+.totop[hidden]{display:none}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+
+<a class="skip" href="#dictionary" data-i="skip">Skip to the dictionary</a>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="From LOL to Lowkey">
+      <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><rect width="30" height="30" rx="9" fill="#5B8DFF"/><path d="M8 9.5h14a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-7l-4.5 3.5v-3.5H8a2 2 0 0 1-2-2v-6a2 2 0 0 1 2-2Z" fill="#071230"/><circle cx="11.5" cy="14.5" r="1.3" fill="#fff"/><circle cx="15" cy="14.5" r="1.3" fill="#fff"/><circle cx="18.5" cy="14.5" r="1.3" fill="#fff"/></svg>
+      LOL → Lowkey
+    </a>
+    <nav class="links" id="links" aria-label="Main">
+      <a href="#dictionary" data-i="n_dict">Dictionary</a>
+      <a href="#checker" data-i="n_chk">Text checker</a>
+      <a href="#quiz" data-i="n_quiz">Quiz</a>
+      <a href="#chat-essay" data-i="n_reg">Chat vs essay</a>
+      <a href="#research" data-i="n_res">Research</a>
+      <a href="#about" data-i="n_src">Sources</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="ru" aria-pressed="false">RU</button>
+    </div>
+    <button class="menu-b" id="menuB" type="button" aria-expanded="false" aria-controls="links" data-i="menu">Menu</button>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO: short, hands the reader to the dictionary -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="chip"><i></i><span data-i="eyebrow">Research project · Linguistics · Taraz, 2026</span></span>
+        <h1>From LOL<br>to <em>Lowkey</em></h1>
+        <p class="sub" data-ih="sub"></p>
+        <form class="hs" id="hs" role="search">
+          <label class="sr" for="hq" data-i="d_search_l">Search slang</label>
+          <input id="hq" type="search" autocomplete="off" spellcheck="false" data-ip="hs_ph" placeholder="Type a slang word, e.g. lowkey">
+          <button class="btn primary" type="submit" data-i="hs_go">Search</button>
+        </form>
+        <div class="try"><span data-i="try">Try:</span><span id="tryChips" style="display:contents"></span></div>
+        <div class="meta"><span><b id="stN">0</b><span data-i="st1">slang entries</span></span><span><b>7</b><span data-i="st2">types</span></span><span><b>28</b><span data-i="st3">teenagers surveyed</span></span></div>
+      </div>
+      <div class="pv-col" id="pv" aria-label="Examples"></div>
+    </div>
+  </div>
+</section>
+
+<!-- DICTIONARY -->
+<section class="dict band" id="dictionary" style="padding-top:clamp(36px,5vw,64px)">
+  <div class="wrap">
+    <span class="eyebrow" data-i="d_e">Dictionary</span>
+    <h2 class="h" data-i="d_h">The slang dictionary</h2>
+    <p class="lead" data-ih="d_l"></p>
+    <p class="lead" data-i="d_ru" style="color:var(--royal);font-weight:600"></p>
+    <ol class="guide">
+      <li><b class="n">1</b><div><strong data-i="g1h">Search or pick a type</strong><span data-i="g1p"></span></div></li>
+      <li><b class="n">2</b><div><strong data-i="g2h">Read the card</strong><span data-i="g2p"></span></div></li>
+      <li><b class="n">3</b><div><strong data-i="g3h">Practise</strong><span data-i="g3p"></span></div></li>
+    </ol>
+  </div>
+  <div class="tools" id="tools">
+    <div class="wrap">
+      <div class="tools-row">
+        <label class="search">
+          <span class="sr" data-i="d_search_l">Search slang</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="q" type="search" autocomplete="off" spellcheck="false" data-ip="d_ph" placeholder="Search a word or a meaning…">
+          <button class="x" id="qx" type="button" hidden aria-label="Clear">×</button>
+        </label>
+        <button class="tg" id="nowTg" type="button" aria-pressed="false"><i></i><span data-i="d_now">Trending now</span></button>
+        <select class="sel" id="sort" aria-label="Sort">
+          <option value="az" data-i="so_az">A–Z</option>
+          <option value="type" data-i="so_type">By type</option>
+          <option value="now" data-i="so_now">Trending first</option>
+        </select>
+      </div>
+      <div class="chips" id="chips" role="group" aria-label="Types"></div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div id="tpanel"></div>
+    <p class="count" id="count" aria-live="polite"></p>
+    <div class="grid" id="grid"></div>
+    <div id="emptyBox"></div>
+    <div class="more"><button class="btn solid" id="moreB" type="button" hidden></button></div>
+    <p class="note" data-i="d_note"></p>
+  </div>
+</section>
+
+<!-- TEXT CHECKER -->
+<section class="chk band" id="checker">
+  <div class="wrap">
+    <span class="eyebrow" data-i="k_e">Tool</span>
+    <h2 class="h" data-i="k_h">Slang checker for your essay</h2>
+    <p class="lead" data-i="k_l"></p>
+    <div class="ck-grid">
+      <div class="ck-col">
+        <div class="ck-h"><label for="ckIn" data-i="k_in">Your text</label><span class="b"><button class="mini" id="ckEx" type="button" data-i="k_ex">Try an example</button><button class="mini" id="ckClr" type="button" data-i="k_clear">Clear</button></span></div>
+        <textarea class="ta" id="ckIn" lang="en" spellcheck="false" data-ip="k_ph" placeholder="Paste or type English text here…"></textarea>
+        <p class="ck-note" data-i="k_note"></p>
+      </div>
+      <div class="ck-col">
+        <div class="ck-h"><span data-i="k_res">Result</span><span class="score" id="ckScore"></span></div>
+        <div class="ck-view" id="ckView" lang="en" aria-live="polite"></div>
+        <div class="ck-h"><button class="mini pri" id="ckApply" type="button" data-i="k_apply">Apply suggestions</button></div>
+        <div class="ck-list" id="ckList"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section class="quiz band" id="quiz">
+  <div class="wrap dark">
+    <span class="eyebrow" data-i="q_e">Quiz</span>
+    <h2 class="h" data-i="q_h">Do you really know it?</h2>
+    <p class="lead" data-i="q_l"></p>
+    <div class="qmodes" id="qModes"></div>
+    <div class="quiz-box" id="quizBox"></div>
+  </div>
+</section>
+
+<!-- CHAT VS ESSAY -->
+<section class="reg-sec band" id="chat-essay">
+  <div class="wrap">
+    <span class="eyebrow" data-i="c_e">Registers</span>
+    <h2 class="h" data-i="c_h">Chat vs essay</h2>
+    <p class="lead" data-i="c_l"></p>
+    <div class="reg-grid">
+      <div class="reg" id="reg" data-mode="chat">
+        <div class="reg-top">
+          <p data-i="reg_t">One message, two registers</p>
+          <div class="seg" role="group" aria-label="Register">
+            <button type="button" data-mode="chat" aria-pressed="true" data-i="chat">Chat</button>
+            <button type="button" data-mode="essay" aria-pressed="false" data-i="essay">Essay</button>
+          </div>
+        </div>
+        <div class="stage" id="stage" aria-live="polite">
+          <span class="tag" id="stageTag">Group chat</span>
+          <div class="msg" id="msg"></div>
+        </div>
+        <div class="reg-foot">
+          <p id="regHint"></p>
+          <button class="link-b" type="button" id="nextEx" data-i="next_ex">Next example</button>
+        </div>
+      </div>
+      <div>
+        <div class="pair-h" aria-hidden="true"><span data-i="c_chat">In chat</span><span></span><span data-i="c_ess">In an essay</span></div>
+        <div class="pairs" id="pairs"></div>
+        <p class="rule" data-i="c_rule"></p>
+      </div>
+    </div>
+    <h3 class="h3s" data-i="c_proof">Proofread for four things</h3>
+    <div class="proof" id="proof"></div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section class="research band" id="research">
+  <div class="wrap">
+    <span class="eyebrow" data-i="r_e">Our research</span>
+    <h2 class="h" data-i="r_h">What 28 teenagers told us</h2>
+    <p class="lead" data-i="r_l"></p>
+    <div class="tiles" id="tiles"></div>
+    <div class="charts" id="charts"></div>
+    <div class="verdict">
+      <div class="big"><p data-i="r_v"></p></div>
+      <div class="lim"><span class="eyebrow" data-i="r_lim_h">Limits</span><p data-i="r_lim"></p></div>
+    </div>
+    <div class="poll" id="poll"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about band" id="about">
+  <div class="wrap">
+    <span class="eyebrow" data-i="a_e">About</span>
+    <h2 class="h" data-i="a_h">About the project</h2>
+    <div class="cols">
+      <dl>
+        <div><dt data-i="a_t">Topic</dt><dd>“From LOL to Lowkey: Does Internet Slang Affect Teenagers’ Formal English?”</dd></div>
+        <div><dt data-i="a_au">Authors</dt><dd>Eskendirkyzy Kausar, Jarkynova Anel · 9 «C»</dd></div>
+        <div><dt data-i="a_sv">Scientific supervisor</dt><dd>Kaldybekova Tolkyn · <span data-i="a_sv2">English teacher</span></dd></div>
+        <div><dt data-i="a_sc">School</dt><dd>Specialized boarding school “Bilim-Innovation” for gifted girls named after Aisha Bibi, Zhambyl region</dd></div>
+        <div><dt data-i="a_sec">Section</dt><dd data-i="a_sec2">Linguistics · Taraz, 2026</dd></div>
+      </dl>
+      <div>
+        <h3 data-i="a_how">How the dictionary was made</h3>
+        <ol><li data-i="a1"></li><li data-i="a2"></li><li data-i="a3"></li></ol>
+      </div>
+    </div>
+    <div style="margin-top:40px">
+      <h3 data-i="a_bib">Sources</h3>
+      <ol class="src">
+        <li>Crystal, D. (2006). <i>Language and the Internet</i> (2nd ed.). Cambridge University Press. <a href="https://www.cambridge.org/core/books/language-and-the-internet/8F85B9421BA8C0435F67142D0DD14AD2" target="_blank" rel="noopener">Link</a></li>
+        <li>Plester, B., Wood, C., &amp; Joshi, P. (2009). Exploring the relationship between children’s knowledge of text message abbreviations and school literacy outcomes. <i>British Journal of Developmental Psychology, 27</i>(1), 145–161. <a href="https://doi.org/10.1348/026151008X320507" target="_blank" rel="noopener">DOI</a></li>
+        <li>Crystal, D. (2008). <i>Txtng: The Gr8 Db8</i>. Oxford University Press. <a href="https://search.worldcat.org/title/txtng-the-gr8-db8/oclc/191758335" target="_blank" rel="noopener">Link</a></li>
+        <li>Tagliamonte, S. A., &amp; Denis, D. (2008). Linguistic ruin? LOL! Instant messaging and teen language. <i>American Speech, 83</i>(1), 3–34. <a href="https://doi.org/10.1215/00031283-2008-001" target="_blank" rel="noopener">DOI</a></li>
+        <li>McCulloch, G. (2019). <i>Because Internet: Understanding the New Rules of Language</i>. Riverhead Books. <a href="https://www.publishersweekly.com/9780735210936" target="_blank" rel="noopener">Link</a></li>
+        <li>Plag, I. (2018). <i>Word-Formation in English</i> (2nd ed.). Cambridge University Press. <a href="https://doi.org/10.1017/9781316771402" target="_blank" rel="noopener">DOI</a></li>
+        <li>Halliday, M. A. K., &amp; Hasan, R. (1989). <i>Language, Context, and Text</i>. Oxford University Press.</li>
+        <li>Biber, D., &amp; Conrad, S. (2019). <i>Register, Genre, and Style</i> (2nd ed.). Cambridge University Press.</li>
+        <li>Hymes, D. (1972). On Communicative Competence. In J. B. Pride &amp; J. Holmes (Eds.), <i>Sociolinguistics</i> (pp. 269–293). Penguin Books.</li>
+        <li>Yule, G. (2020). <i>The Study of Language</i> (7th ed.). Cambridge University Press.</li>
+      </ol>
+      <h3 style="margin:24px 0 12px" data-i="a_cur">Recent slang guides used to check newer words</h3>
+      <ol class="src">
+        <li><a href="https://www.mentalfloss.com/language/slang/top-gen-alpha-slang-2026" target="_blank" rel="noopener">Mental Floss: The Top 24 Gen Alpha Slang Terms of 2026</a></li>
+        <li><a href="https://teachertapp.com/articles/from-aura-farming-and-larping-to-dagestan-and-mewing-a-teachers-guide-to-this-years-slang/" target="_blank" rel="noopener">Teacher Tapp: a teacher’s guide to this year’s slang</a></li>
+        <li><a href="https://www.storyboard18.com/amp/social-media/from-beige-flags-to-canon-events-the-gen-z-slang-youll-hear-everywhere-in-2026-88287.htm" target="_blank" rel="noopener">Storyboard18: the Gen Z slang you’ll hear everywhere in 2026</a></li>
+      </ol>
+    </div>
+    <div class="foot"><span>From LOL to Lowkey · <span data-i="f1">Research project</span> · Taraz 2026</span><span data-i="f2">Slang changes fast: some entries may fade or shift.</span></div>
+  </div>
+</section>
+</main>
+<button class="totop" id="toTop" type="button" hidden aria-label="Back to top"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 14 6-6 6 6"/></svg></button>
+
+<script>
+// [word, type(1-7), meaning EN, meaning RU, example, formal version, now(1 = active among teens 2025-26)]
+const D=[
+/* ===== 1. Acronyms and initialisms ===== */
+["LOL",1,"Laughing out loud; often just a friendly, softening tone marker.","«Громко смеюсь»; часто просто смягчает тон сообщения.","lol i forgot my charger again","That is amusing.",0],
+["LMAO",1,"A stronger LOL: laughing very hard.","Усиленный LOL: очень сильно смеюсь.","lmao he really said that","That is extremely funny.",0],
+["ROFL",1,"Rolling on the floor laughing: finding something hilarious.","Катаюсь по полу от смеха: очень смешно.","rofl, that video","That is hilarious.",0],
+["BRB",1,"Be right back.","Сейчас вернусь.","brb, mom is calling","I will return shortly.",0],
+["IDK",1,"I don't know.","Я не знаю.","idk what to wear tomorrow","I do not know.",0],
+["OMG",1,"Oh my God (or gosh): a reaction of surprise or excitement.","«О боже»: реакция удивления или восторга.","omg you got the tickets?!","How surprising!",0],
+["BTW",1,"By the way: introduces a side note.","Кстати: вводит дополнительное замечание.","btw the test is moved to Friday","Incidentally,",0],
+["TBH",1,"To be honest.","Честно говоря.","tbh i liked the book","Frankly,",0],
+["IDC",1,"I don't care.","Мне всё равно.","idc where we eat","I have no preference.",0],
+["IMO",1,"In my opinion.","По моему мнению.","imo the second one is better","In my opinion,",0],
+["NGL",1,"Not gonna lie: introduces an honest, often surprising opinion.","«Не буду врать»: вводит честное мнение.","ngl that was scary","Honestly,",0],
+["TYSM",1,"Thank you so much.","Огромное спасибо.","tysm for helping me","Thank you very much.",0],
+["FR",1,"For real: seriously, truly; also «I agree».","«По-настоящему»: серьёзно, правда; также «согласен».","fr this song is perfect","Truly. / I agree.",0],
+["SMH",1,"Shaking my head: disappointment or disbelief.","Качаю головой: разочарование или неверие.","smh he did it again","I am disappointed.",0],
+["FYI",1,"For your information.","К твоему сведению.","fyi the meeting is at 3","For your information,",0],
+["IRL",1,"In real life: offline, not online.","В реальной жизни: не в интернете.","we should meet irl","In person.",0],
+["DM",1,"Direct message: a private message.","Личное сообщение.","dm me the details","Send me a private message.",0],
+["AFK",1,"Away from keyboard: not at the computer or game right now.","Отошёл от клавиатуры: временно не за компьютером или игрой.","afk, dinner","I am away from the computer.",0],
+["GG",1,"Good game: said at the end of a match, sometimes sarcastically.","Хорошая игра: говорят в конце матча, иногда саркастично.","gg, you played well","Well played.",0],
+["ILY",1,"I love you.","Я тебя люблю.","ily bestie","",0],
+["IKR",1,"I know, right? Strong agreement.","«Да, правда же?»: сильное согласие.","ikr, the ending was crazy","I completely agree.",0],
+["JK",1,"Just kidding.","Просто шучу.","jk, i love it","I am only joking.",0],
+["NVM",1,"Never mind.","Забудь, неважно.","nvm i found it","Please disregard that.",0],
+["RN",1,"Right now.","Прямо сейчас.","i'm busy rn","Currently,",0],
+["TMI",1,"Too much information: more personal detail than needed.","Слишком много информации: лишние личные подробности.","tmi!! i did not need to know","That is more detail than necessary.",0],
+["TL;DR",1,"Too long; didn't read: a short summary of a long text.","Слишком длинно, не читал: краткое содержание длинного текста.","tl;dr: the exam is on Monday","In summary,",0],
+["FOMO",1,"Fear of missing out: worry that others are enjoying something without you.","Страх упустить: тревога, что другие веселятся без тебя.","i have fomo seeing their trip","Fear of missing out",0],
+["YOLO",1,"You only live once: a reason to take a risk or enjoy the moment.","Живём один раз: повод рискнуть или насладиться моментом.","yolo, let's go","One should enjoy life.",0],
+["GOAT",1,"Greatest of all time: the best ever in a field.","Величайший за всё время: лучший в своей области.","Messi is the goat","The greatest of all time.",0],
+["OP",1,"Original poster: whoever started a thread. In games: overpowered.","Автор поста; в играх — слишком сильный (overpowered).","op was right","The original author.",0],
+["BFF",1,"Best friends forever.","Лучшие друзья навсегда.","she's my bff","Closest friend.",0],
+["TTYL",1,"Talk to you later.","Поговорим позже.","ttyl, bye","I will speak with you later.",0],
+["OMW",1,"On my way.","Уже в пути.","omw, 5 mins","I am on my way.",0],
+["WYD",1,"What (are) you doing?","Что делаешь?","wyd tonight?","What are you doing?",0],
+["HMU",1,"Hit me up: contact me.","«Напиши мне»: свяжись со мной.","hmu when you're free","Please contact me.",0],
+["FWIW",1,"For what it's worth: offers an opinion modestly.","«Как бы то ни было»: скромно высказывает мнение.","fwiw i think you're right","For what it is worth,",0],
+["ICYMI",1,"In case you missed it.","На случай, если ты пропустил.","icymi: class starts at 9","In case you missed it,",0],
+["TIL",1,"Today I learned.","Сегодня я узнал.","til octopuses have three hearts","I learned today that",0],
+["WDYM",1,"What do you mean?","Что ты имеешь в виду?","wdym it's cancelled","Could you clarify?",0],
+["TBF",1,"To be fair: adds a fair point.","«Справедливости ради».","tbf he tried his best","To be fair,",0],
+["LMK",1,"Let me know.","Дай знать.","lmk if you can come","Please inform me.",0],
+["GTG",1,"Got to go.","Мне пора идти.","gtg, bye!","I have to leave.",0],
+["NP",1,"No problem.","Не за что, без проблем.","np, anytime","You are welcome.",0],
+["ISTG",1,"I swear: stresses that you are serious or frustrated.","«Клянусь»: подчёркивает серьёзность или раздражение.","istg i locked the door","I assure you,",0],
+["ICL",1,"I can't lie: honestly; works like NGL.","«Не могу соврать»: честно; как NGL.","icl i'm nervous","Honestly,",1],
+["ONG",1,"On God: I swear, for real.","«Клянусь»: правда, без шуток.","ong i didn't know","I promise.",1],
+["IYKYK",1,"If you know, you know: an inside joke for those who get it.","«Кто знает — тот знает»: шутка для своих.","that cafe, iykyk","",1],
+["POV",1,"Point of view. In videos, «POV:» sets up a scene as if you were in it.","Точка зрения. В видео «POV:» вводит сценку «от первого лица».","pov: it's Monday morning","From this perspective,",0],
+["NPC",1,"Non-player character. Online: someone who seems to act on autopilot.","Неигровой персонаж. В сети: человек, ведущий себя «на автопилоте».","he's such an npc today","He is behaving mechanically.",1],
+["W / L",1,"Win / Loss: «W» is a good result, «L» a bad one.","Win / Loss: «W» — удача, «L» — неудача.","that's a W","That is a success.",0],
+["GRWM",1,"Get ready with me: a video showing someone's getting-ready routine.","«Собирайся со мной»: видео о том, как человек собирается.","grwm for the school trip","",1],
+["FYP",1,"For You Page: TikTok's main personalised feed.","For You Page: главная персональная лента TikTok.","this keeps showing up on my fyp","",1],
+["NSFW",1,"Not safe for work: content unsuitable for school or work.","Не для работы и школы: неприемлемый для публичных мест контент.","nsfw warning","Inappropriate content.",0],
+["OOTD",1,"Outfit of the day.","Образ дня.","ootd for the school trip","",0],
+["TFW",1,"That feeling when…","То чувство, когда…","tfw you finish homework early","",0],
+["HBD",1,"Happy birthday.","С днём рождения.","hbd Aisha!","Happy birthday.",0],
+
+/* ===== 2. Abbreviations and clippings ===== */
+["thx",2,"Thanks.","Спасибо.","thx for the notes","Thank you.",0],
+["pls",2,"Please (also plz).","Пожалуйста (также plz).","pls reply fast","Please",0],
+["bro",2,"From «brother»: a casual way to address a friend.","От brother: дружеское обращение, «чувак».","bro, listen to this","My friend",0],
+["fam",2,"From «family»: close friends; also a friendly address.","От family: близкие друзья; дружеское обращение.","love you fam","Close friends",0],
+["sis",2,"From «sister»: a friendly address to a girl or friend.","От sister: дружеское обращение к подруге.","sis you look great","My friend",0],
+["bestie",2,"Best friend.","Лучший друг, лучшая подруга.","me and my bestie","Closest friend",0],
+["cuz",2,"Because (also: cousin).","Потому что (также: двоюродный брат или сестра).","i'm late cuz of the bus","because",0],
+["bc",2,"Because.","Потому что.","bc i was sleeping","because",0],
+["w/ · w/o",2,"With / without.","С / без.","coffee w/ milk, w/o sugar","with / without",0],
+["convo",2,"Conversation.","Разговор.","we had a long convo","conversation",0],
+["obvi",2,"Obviously.","Очевидно.","obvi i'm coming","Obviously",0],
+["totes",2,"Totally: completely.","Totally: совершенно, абсолютно.","totes agree","Completely",0],
+["probs",2,"Probably.","Вероятно.","probs not today","Probably",0],
+["def",2,"Definitely.","Определённо.","def going","Definitely",0],
+["legit",2,"Legitimate: real, genuine; also «really good».","Настоящий, подлинный; также «действительно классный».","is this site legit?","Genuine",0],
+["fave",2,"Favorite.","Любимый.","that's my fave song","favorite",0],
+["ppl",2,"People.","Люди.","so many ppl here","people",0],
+["pic",2,"Picture.","Картинка, фото.","send me the pic","photograph",0],
+["insta",2,"Instagram.","Instagram (сокращённо).","add me on insta","Instagram",0],
+["sus",2,"Suspicious or shady (popularised by the game Among Us).","Подозрительный, мутный (стало популярно благодаря игре Among Us).","that message is sus","suspicious",0],
+["bday",2,"Birthday.","День рождения.","it's my bday on Friday","birthday",0],
+["congrats",2,"Congratulations.","Поздравляю.","congrats on the win!","Congratulations",0],
+["rando",2,"A random person you don't know.","Случайный незнакомый человек.","some rando commented","an unknown person",0],
+["adorbs",2,"Adorable.","Очень милый.","your puppy is adorbs","adorable",0],
+["perf",2,"Perfect.","Идеально.","perf, see you then","Perfect.",0],
+["sec",2,"Second: «wait a sec» means wait a moment.","Секунда: «wait a sec» значит «подожди момент».","hold on, one sec","one moment",0],
+["tmrw",2,"Tomorrow.","Завтра.","see you tmrw","tomorrow",0],
+["fit",2,"From «outfit»: what someone is wearing.","От outfit: наряд, образ.","fit check before school","outfit",0],
+["ship",2,"From «relationship»: to hope two people become a couple.","От relationship: «болеть» за пару, хотеть, чтобы люди стали парой.","i ship them so hard","to support a romantic pairing",0],
+["delulu",2,"Short for «delusional»: wildly optimistic or unrealistic; sometimes said proudly.","Сокращение от delusional: нереалистично оптимистичный; иногда с гордостью.","delulu is the solulu","unrealistic",1],
+["unc",2,"From «uncle»: a playful label for someone old or out of touch.","От uncle: шутливое название «старомодного» или взрослого человека.","you sound like an unc","an older person",1],
+
+/* ===== 3. Letter and number substitution ===== */
+["gr8",3,"Great.","Отлично.","that's gr8 news","great",0],
+["2day",3,"Today.","Сегодня.","what's up 2day?","today",0],
+["2nite",3,"Tonight.","Сегодня вечером.","party 2nite","tonight",0],
+["2morrow",3,"Tomorrow (also 2moro).","Завтра.","see you 2morrow","tomorrow",0],
+["b4",3,"Before.","До, перед.","text me b4 you leave","before",0],
+["l8r",3,"Later.","Позже.","ok l8r","later",0],
+["u",3,"You.","Ты, вы.","u coming?","you",0],
+["r",3,"Are.","Являешься, являетесь (are).","how r u","are",0],
+["ur",3,"Your or you're.","Твой или «ты есть» (your / you're).","ur so funny","your / you are",0],
+["4ever",3,"Forever.","Навсегда.","friends 4ever","forever",0],
+["any1",3,"Anyone.","Кто-нибудь.","any1 here?","anyone",0],
+["sum1",3,"Someone.","Кто-то.","sum1 help me","someone",0],
+["m8",3,"Mate: a friend (British).","Приятель (британский английский).","alright m8","friend",0],
+["w8",3,"Wait.","Подожди.","w8 for me","wait",0],
+["h8",3,"Hate.","Ненавижу.","i h8 mondays","hate",0],
+["ez",3,"Easy; in games, said after an easy win.","Легко; в играх так говорят после лёгкой победы.","that level was ez","easy",0],
+["y",3,"Why.","Почему.","y not?","why",0],
+["k",3,"Okay; can sound cold or annoyed when sent alone.","«Окей»; если отправить одну букву, может звучать холодно.","k, see you then","Understood.",0],
+["c",3,"See.","Видеть, смотри.","c u soon","see",0],
+["cya",3,"See you (later).","Увидимся.","cya tomorrow","Goodbye.",0],
+["4u",3,"For you.","Для тебя.","this is 4u","for you",0],
+["10q",3,"Thank you (read as «ten-q»).","Спасибо (читается «тен-кью»).","10q so much","Thank you.",0],
+["B4N",3,"Bye for now.","Пока-пока (bye for now).","gtg, b4n","Goodbye for now.",0],
+
+/* ===== 4. Phonetic and orthographic respellings ===== */
+["gonna",4,"Going to: shows a future plan.","Going to: «собираюсь», план на будущее.","i'm gonna study","going to",0],
+["wanna",4,"Want to.","Want to: «хочу».","wanna hang out?","want to",0],
+["gotta",4,"Got to, have to.","Got to: «должен, надо».","gotta go","have to",0],
+["ain't",4,"Nonstandard for am not, isn't, aren't, hasn't or haven't.","Нестандартная форма: am not, isn't, aren't, hasn't, haven't.","it ain't over","is not / am not",0],
+["gimme",4,"Give me.","Give me: «дай мне».","gimme a minute","give me",0],
+["lemme",4,"Let me.","Let me: «позволь мне».","lemme check","let me",0],
+["kinda",4,"Kind of: somewhat.","Kind of: «вроде», «отчасти».","it's kinda cold","somewhat",0],
+["sorta",4,"Sort of: somewhat.","Sort of: «вроде как».","i sorta get it","somewhat",0],
+["dunno",4,"Don't know.","Don't know: «не знаю».","dunno what to say","do not know",0],
+["y'all",4,"You all: a friendly «you» for a group.","You all: «вы все».","y'all ready?","all of you",0],
+["tryna",4,"Trying to.","Trying to: «пытаюсь».","tryna sleep","trying to",0],
+["finna",4,"Fixing to: about to, going to.","Fixing to: «собираюсь», «вот-вот».","i'm finna leave","about to",0],
+["ima",4,"I'm going to.","I'm going to: «я собираюсь».","ima call you","I am going to",0],
+["outta",4,"Out of.","Out of: «из», «без».","outta here","out of",0],
+["lotta",4,"A lot of.","A lot of: «много».","a lotta homework","a lot of",0],
+["skool",4,"School, a deliberate respelling.","School, намеренное искажение.","no skool 2morrow","school",0],
+["wiv",4,"With, imitating a London-style pronunciation.","With: передаёт лондонское произношение.","coming wiv me?","with",0],
+["kewl",4,"Cool, in a playful spelling.","Cool в шутливом написании.","that's kewl","cool",0],
+["luv",4,"Love.","Love: «любовь, люблю».","luv u","love",0],
+["thru",4,"Through.","Through: «через».","walked thru the park","through",0],
+["nite",4,"Night.","Night: «ночь».","gn, nite!","night",0],
+["tho",4,"Though: «but», «however».","Though: «хотя», «однако».","it's good tho","though",0],
+["lil",4,"Little.","Little: «маленький».","my lil brother","little",0],
+["smol",4,"Small, especially in a cute way.","Small: маленький, особенно в милом смысле.","a smol puppy","small",0],
+["doggo",4,"Dog, in a cute internet voice.","Собачка (милое интернет-слово).","good doggo","dog",0],
+["hewwo",4,"Hello, in baby-talk style.","Hello в «детском» стиле.","hewwo friends","hello",0],
+["bruh",4,"A respelling of «bro»; shows disbelief, annoyance or humour.","Вариант bro; выражает неверие, раздражение или шутку.","bruh that's wrong","",0],
+["tuff",4,"«Tough» respelled: cool, impressive.","Tough в новом написании: круто, впечатляюще.","that edit is tuff","impressive",1],
+
+/* ===== 5. Lexical innovation and semantic shift ===== */
+["lowkey",5,"Slightly, somewhat or secretly. The opposite of «loud»; it does not mean «completely» or «immediately».","Слегка, отчасти или тайно. Противоположно «громко»; не значит «полностью» или «немедленно».","i lowkey love this song","somewhat / slightly",0],
+["highkey",5,"Openly or very much, without hiding it.","Открыто, очень сильно, не скрывая.","i highkey need a nap","very much",0],
+["cap",5,"A lie or an exaggeration; «capping» means lying.","Ложь или преувеличение; «capping» значит врать.","that's cap","untrue",0],
+["no cap",5,"No lie: I'm being serious.","Без вранья: я серьёзно.","this is the best food, no cap","truthfully",0],
+["mid",5,"Mediocre: average and a bit disappointing.","Посредственный: средний и немного разочаровывающий.","the movie was mid","mediocre",0],
+["slay",5,"To do something impressively well or look amazing.","Сделать что-то блестяще или выглядеть потрясающе.","you slay on stage","excel / perform outstandingly",0],
+["ate",5,"Did something exceptionally well («she ate»).","Сделал(а) что-то исключительно хорошо («she ate»).","she ate that speech","performed excellently",0],
+["peak",5,"At its best; used for something excellent («peak cinema»). It can also be ironic.","На высшем уровне; об отличной вещи («peak cinema»). Бывает и иронично.","that goal was peak","excellent",0],
+["sigma",5,"A self-reliant person who ignores social hierarchy; often used jokingly.","Независимый человек, который не следует за толпой; часто в шутку.","he walks like a sigma","independent person",1],
+["aura",5,"Coolness or presence; «+aura» is gaining respect, «-aura» is embarrassing yourself.","Крутость, харизма; «+aura» — заслужить уважение, «-aura» — опозориться.","+1000 aura for that move","charisma",1],
+["aura farming",5,"Deliberately acting cool to gain «aura»; often playful.","Намеренно вести себя круто ради «ауры»; часто в шутку.","he's aura farming again","trying to appear impressive",1],
+["six seven",5,"A meme with no fixed meaning, shouted as an inside joke (also «67»).","Мем без определённого значения, его выкрикивают как шутку для своих (также «67»).","six seven!","",1],
+["rizz",5,"Charm, especially the ability to attract someone (from «charisma»).","Обаяние, особенно умение понравиться (от charisma).","he has serious rizz","charm",1],
+["bussin",5,"Really good, especially food.","Очень вкусно или очень здорово, особенно о еде.","this pizza is bussin","delicious",0],
+["based",5,"Confident in being yourself; or simply «good».","Уверенный в себе, не зависящий от чужого мнения; или просто «классно».","that's a based opinion","self-assured",0],
+["simp",5,"Someone who does too much for a crush to win attention.","Тот, кто слишком много делает ради симпатии.","stop being a simp","",0],
+["ick",5,"A sudden turn-off about someone you liked, caused by a small thing.","Внезапное отвращение к человеку, который нравился, из-за мелочи.","he chews loudly, instant ick","",0],
+["touch grass",5,"Go outside and get off the internet.","Выйди на улицу и оторвись от интернета.","you need to touch grass","Take a break from screens.",0],
+["glow-up",5,"A big positive change in looks or confidence.","Большое улучшение внешности или уверенности.","what a glow-up","transformation",0],
+["era",5,"A phase of life with its own mood or focus («my reading era»).","Этап жизни со своим настроением или увлечением («my reading era»).","i'm in my study era","phase",1],
+["rent free",5,"«Living in my head rent free»: can't stop thinking about it.","«Живёт в моей голове бесплатно»: не могу перестать об этом думать.","that song lives in my head rent free","persistently on my mind",0],
+["it's giving",5,"It gives the vibe of something («it's giving 90s»).","Создаёт ощущение чего-то («it's giving 90s»).","it's giving summer","It resembles",1],
+["understood the assignment",5,"Did exactly the right thing, brilliantly.","Сделал именно то, что нужно, и блестяще.","she understood the assignment","performed perfectly",0],
+["periodt",5,"«Period»: end of discussion.","«Точка»: разговор окончен.","i'm right, periodt","That is final.",0],
+["snatched",5,"Looking sharp and stylish.","Выглядеть безупречно и стильно.","your outfit is snatched","stylish",0],
+["brain rot",5,"Low-quality, repetitive online content; or the dull feeling from too much of it.","Низкокачественный повторяющийся контент или «отупение» от его избытка.","this video is pure brain rot","",1],
+["yap",5,"To talk a lot without saying much.","Много говорить, ничего не сказав.","stop yapping","talk at length",1],
+["fanum tax",5,"A joke about taking a share of a friend's food.","Шутка о «налоге»: взять часть еды друга.","fanum tax on your fries","",1],
+["mewing",5,"A tongue-posture trend said to shape the jawline; often a joke gesture.","Тренд с положением языка «для красивой челюсти»; часто шутка-жест.","he's mewing in the photo","",1],
+["crash out",5,"To lose control: an angry or reckless outburst.","Потерять контроль: вспышка гнева или безрассудный поступок.","don't crash out over a game","lose composure",1],
+["cooked",5,"Doomed or in serious trouble («we're cooked»).","Обречён или в большой беде («we're cooked»).","i didn't study, i'm cooked","in serious trouble",1],
+["let him cook",5,"Let someone work without interrupting; they're doing great.","Не мешай человеку: у него получается отлично.","let her cook","Allow her to continue.",1],
+["locked in",5,"Fully focused on a task.","Полностью сосредоточен на задаче.","locked in for the exam","fully concentrated",1],
+["chopped",5,"Ugly, bad or uncool.","Некрасивый, плохой или несимпатичный.","that haircut is chopped","unattractive",1],
+["glaze",5,"To flatter or praise someone too much.","Чрезмерно хвалить, льстить.","stop glazing him","over-praise",1],
+["tweaking",5,"Acting strange or overreacting.","Вести себя странно или слишком остро реагировать.","are you tweaking?","overreacting",1],
+["rage bait",5,"Online content made to make people angry, to get clicks.","Контент, созданный, чтобы разозлить людей ради просмотров.","that post is rage bait","provocative content",1],
+["doomscrolling",5,"Endlessly scrolling through bad news.","Бесконечно листать плохие новости.","stop doomscrolling at night","",0],
+["red flag",5,"A warning sign in a person or situation (opposite: green flag).","Тревожный признак в человеке или ситуации (противоположное: green flag).","being rude to waiters is a red flag","warning sign",0],
+["beige flag",5,"A harmless quirk, neither good nor bad.","Безобидная странность, ни хорошо, ни плохо.","he loves spreadsheets, beige flag","",1],
+["canon event",5,"An unavoidable, often painful moment that shapes you (from Spider-Verse).","Неизбежный, часто неприятный момент, который формирует человека (из «Человека-паука»).","failing one quiz is a canon event","",1],
+["main character",5,"Acting like the hero of your own story («main character energy»).","Вести себя как герой собственной истории («main character energy»).","she has main character energy","",0],
+["skibidi",5,"A meaningless meme word from a viral animated series; used as a joke.","Бессмысленное мем-слово из вирусного мультсериала; используется в шутку.","skibidi!","",1],
+["mogging",5,"Outshining someone in looks or presence.","Затмевать кого-то внешностью или присутствием.","he's mogging everyone","outshining",1],
+["larp",5,"To pretend to be someone you're not (from live-action role-play).","Притворяться тем, кем не являешься (от live-action role-play).","he's larping as a pro","pretend",1],
+["pookie",5,"A cute pet name for someone you care about.","Ласковое прозвище для близкого человека.","hi pookie","",1],
+["cheugy",5,"Outdated or trying too hard.","Устаревший или слишком старающийся.","that trend is cheugy","outdated",0],
+["baddie",5,"A confident, stylish, attractive person.","Уверенный, стильный, привлекательный человек.","she's a baddie","",0],
+["soft launch",5,"Hinting at a relationship or news online without fully revealing it.","Намекнуть в сети на отношения или новость, не раскрывая всего.","a soft launch of her new project","",1],
+["I know ball",5,"Claiming real expertise (from sports talk).","Утверждать, что действительно разбираешься (из спортивного слэнга).","i know ball, trust me","",1],
+["gatekeep",5,"To keep something secret or keep others out.","Скрывать что-то или не пускать других.","don't gatekeep that recipe","withhold",0],
+["AI slop",5,"Low-quality, mass-produced content made by AI.","Низкокачественный контент массового производства, созданный ИИ.","my feed is full of ai slop","",1],
+["hits different",5,"Feels special or better in a particular moment.","Ощущается особенным или лучше в конкретный момент.","pizza hits different at midnight","feels more special",0],
+["I'm dead",5,"So funny that I can't cope; not literal.","Так смешно, что не могу; не буквально.","i'm dead, stop","That is very funny.",0],
+["spill the tea",5,"To share gossip or inside news.","Рассказать сплетню или инсайд.","spill the tea!","share the news",0],
+["throw shade",5,"To subtly insult or show disrespect.","Тонко задеть или показать неуважение.","she threw shade at me","criticise subtly",0],
+["receipts",5,"Proof, usually screenshots.","Доказательства, обычно скриншоты.","i have the receipts","evidence",0],
+["left on read",5,"Your message was seen but not answered.","Сообщение прочитали, но не ответили.","he left me on read","",0],
+["slide into DMs",5,"To privately message someone, often to flirt.","Написать человеку в личные сообщения, часто чтобы пофлиртовать.","don't slide into her dms","",0],
+["ghosting",5,"Suddenly cutting contact with no explanation.","Внезапно прекратить общение без объяснений.","he ghosted me","cease contact",0],
+["troll",5,"A person who posts to provoke; or doing so.","Человек, провоцирующий ради реакции; также сам процесс.","ignore the troll","provocateur",0],
+["clout",5,"Online influence or fame.","Влияние или известность в сети.","he wants clout","influence",0],
+["ratio",5,"When replies outnumber likes, signalling disapproval.","Когда ответов больше, чем лайков: признак неодобрения.","that post got ratioed","",0],
+["flex",5,"To show off.","Хвастаться.","stop flexing","show off",0],
+["drip",5,"Stylish clothes and accessories.","Стильная одежда и аксессуары.","nice drip","stylish outfit",0],
+["fire",5,"Excellent.","Отлично.","that track is fire","excellent",0],
+["lit",5,"Exciting and fun.","Здорово, зажигательно.","the party was lit","exciting",0],
+["slaps",5,"(Of music or food) really good.","(О музыке или еде) очень хорошо.","this song slaps","is excellent",0],
+["salty",5,"Bitter or annoyed, often after losing.","Раздражённый или обиженный, часто после проигрыша.","he's salty about the loss","bitter",0],
+["shook",5,"Shocked or deeply surprised.","Потрясён.","i'm shook","astonished",0],
+["cringe",5,"Awkward or embarrassing to watch.","Неловкий, стыдный, неприятно смотреть.","that ad is cringe","embarrassing",0],
+["vibe",5,"A mood or atmosphere; also to relax and enjoy.","Настроение или атмосфера; также расслабляться и наслаждаться.","good vibes only","atmosphere",0],
+["mood",5,"«Relatable»: said when something matches how you feel.","«Знакомо»: когда что-то совпадает с твоим состоянием.","monday morning: mood","I relate to that.",0],
+["bet",5,"Okay, deal; also a challenge.","Договорились; также вызов.","bet, see you at 5","Agreed.",0],
+["say less",5,"I understand; no need to explain more.","Понял; можно не объяснять.","pizza tonight? say less","Understood.",0],
+
+/* ===== 6. Paralinguistic and graphic devices ===== */
+[":)",6,"Smiling face: friendliness; in some chats it can read as merely polite.","Улыбка: дружелюбие; в некоторых чатах может казаться просто вежливой.","see you soon :)","",0],
+[":(",6,"Sad face.","Грустное лицо.","i failed the quiz :(","",0],
+["xD",6,"Laughing hard (the X is squeezed-shut eyes).","Хохочу (X — зажмуренные глаза).","that was funny xD","",0],
+["<3",6,"A heart: love, care or thanks.","Сердце: любовь, забота, благодарность.","thanks <3","",0],
+["^_^",6,"Happy, cheerful face.","Радостное лицо.","see you tomorrow ^_^","",0],
+["-_-",6,"Unimpressed, annoyed face.","Недовольное, раздражённое лицо.","you're late again -_-","",0],
+["T_T",6,"Crying face.","Плачущее лицо.","no more holidays T_T","",0],
+[":3",6,"Cute, cat-like smile.","Милая «кошачья» улыбка.","hi :3","",0],
+["uwu",6,"A cute, happy, content face.","Милое, довольное лицо.","this is so cute uwu","",0],
+["¯\\_(ツ)_/¯",6,"The shrug: «I don't know» or «whatever».","Пожимание плечами: «не знаю» или «ну и ладно».","not sure ¯\\_(ツ)_/¯","I am uncertain.",0],
+["soooo",6,"Letter repetition to stress a feeling.","Повтор букв для усиления эмоции.","i'm sooooo tired","very",0],
+["ALL CAPS",6,"Capital letters show shouting, excitement or strong emphasis.","Заглавные буквы показывают крик, восторг или сильный акцент.","I CAN'T WAIT","emphasis through wording",0],
+["lowercase only",6,"Writing with no capitals for a relaxed, casual tone.","Письмо без заглавных букв для спокойного, непринуждённого тона.","just got home. so tired","",0],
+["...",6,"Ellipsis: hesitation, trailing off, or an awkward or passive tone.","Многоточие: неуверенность, недосказанность, неловкий или пассивный тон.","okay...","",0],
+["/s",6,"Tone tag: «sarcasm».","Тон-тег: «сарказм».","great job /s","",0],
+["/j",6,"Tone tag: «just joking».","Тон-тег: «просто шучу».","you're so slow /j","",0],
+["keysmash",6,"Random keys (asdfghjkl) for overwhelming excitement or emotion.","Случайные буквы (asdfghjkl) от переизбытка эмоций.","asdfghjkl he replied!!","",0],
+["aLtErNaTiNg cApS",6,"Alternating capitals for a mocking voice.","Чередование регистра: насмешливый тон.","sure, bE cArEfUl","",0],
+["💀",6,"Skull emoji: «I'm dead», laughing very hard.","Эмодзи «череп»: «я умер», очень смешно.","that was so funny 💀","That is very funny.",1],
+["😭",6,"Loudly crying emoji: often means laughing or being overwhelmed, not real sadness.","Эмодзи «громко плачет»: часто «смеюсь до слёз» или перегруз, а не настоящая грусть.","this meme 😭","That is very funny.",0],
+["🗿",6,"Moai emoji: deadpan, unbothered or an ironic «sure».","Эмодзи «моаи»: невозмутимость, ирония, «ну да».","you won? 🗿","",1],
+["🥀",6,"Wilted rose: dramatic sadness or a mock-tragic «it's over».","Увядшая роза: драматичная грусть или шутливое «всё кончено».","lost my charger again 🥀","",1],
+["🤡",6,"Clown: someone acting foolish; «I'm a clown» means «I fooled myself».","Клоун: тот, кто ведёт себя глупо; «I'm a clown» значит «сам себя одурачил».","i believed him 🤡","",0],
+["👀",6,"Eyes: «I see that», interest, or gossip.","Глаза: «вижу», интерес или сплетни.","new message from him 👀","",0],
+["🧢",6,"Baseball cap: a visual for «cap», meaning a lie.","Кепка: образ для «cap» — ложь.","he won? 🧢","That is untrue.",0],
+["🙏",6,"Folded hands: thanks, hope or begging; can be sarcastic.","Сложенные руки: благодарность, надежда или мольба; бывает саркастично.","please let it be Friday 🙏","Please. / Thank you.",0],
+["💅",6,"Nail polish: calm confidence, «unbothered».","Лак для ногтей: спокойная уверенность, «мне всё равно».","she won't care 💅","",0],
+["✨",6,"Sparkles: emphasis, shine, or mild irony.","Блёстки: акцент, сияние или лёгкая ирония.","✨ aesthetic ✨","",0],
+
+/* ===== 7. Blends ===== */
+["vlog",7,"Video + blog: a video diary.","Video + blog: видеодневник.","i watch her daily vlog","video blog",0],
+["emoticon",7,"Emotion + icon: a face made from keyboard symbols.","Emotion + icon: лицо из символов клавиатуры.","the emoticon :) is a classic","",0],
+["netizen",7,"Internet + citizen: an active internet user.","Internet + citizen: активный пользователь интернета.","netizens loved the video","internet user",0],
+["hangry",7,"Hungry + angry: irritable because of hunger.","Hungry + angry: раздражён от голода.","i'm hangry, feed me","irritable from hunger",0],
+["webinar",7,"Web + seminar: an online seminar.","Web + seminar: онлайн-семинар.","there's a webinar at 5","online seminar",0],
+["podcast",7,"iPod + broadcast: an audio series you can download or stream.","iPod + broadcast: аудиопередача, которую можно скачать или слушать онлайн.","a podcast about space","audio programme",0],
+["bromance",7,"Bro + romance: a close, non-romantic friendship between men.","Bro + romance: тесная дружба между парнями.","what a bromance","close friendship",0],
+["frenemy",7,"Friend + enemy: someone who is both friendly and a rival.","Friend + enemy: тот, кто и друг, и соперник.","my frenemy in class","friendly rival",0],
+["chillax",7,"Chill + relax: to calm down.","Chill + relax: успокоиться и расслабиться.","chillax, it's fine","relax",0],
+["staycation",7,"Stay + vacation: a holiday spent at home.","Stay + vacation: отпуск дома.","we're having a staycation","holiday at home",0],
+["situationship",7,"Situation + relationship: an undefined romantic relationship.","Situation + relationship: неопределённые романтические отношения.","it's a situationship","undefined relationship",1],
+["stan",7,"Often explained as stalker + fan (from Eminem's song «Stan»): an obsessed fan; to support strongly.","Часто объясняют как stalker + fan (из песни Eminem «Stan»): фанат-энтузиаст; горячо поддерживать.","i stan this band","devoted fan",0],
+["cosplay",7,"Costume + play: dressing as a character.","Costume + play: костюм персонажа и игра в него.","her cosplay is amazing","costumed role-play",0],
+["glamping",7,"Glamorous + camping: luxury camping.","Glamorous + camping: роскошный кемпинг.","glamping this summer","luxury camping",0],
+["ginormous",7,"Gigantic + enormous: extremely large.","Gigantic + enormous: огромный.","a ginormous burger","very large",0],
+["mocktail",7,"Mock + cocktail: a non-alcoholic cocktail.","Mock + cocktail: безалкогольный коктейль.","order a mocktail","non-alcoholic drink",0]
+];
+
+/* ========= helpers ========= */
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const store={get(k,d){try{const v=localStorage.getItem(k);return v===null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+let lang=store.get('lol-lang-v2','en');if(lang!=='ru'&&lang!=='en')lang='en';
+const E=D.map((r,i)=>({id:i,w:r[0],t:r[1],en:r[2],ru:r[3],ex:r[4],f:r[5],now:!!r[6]}));
+const findE=w=>E.find(e=>e.w.toLowerCase()===w.toLowerCase());
+const TYPE_COLORS=['#0C1F4D','#14306F','#2A52C9','#3F6FE0','#5B8DFF','#7EA3F2','#9DBBFF'];
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+
+/* ========= translations (slang itself always stays English) ========= */
+const T={
+en:{
+skip:'Skip to the dictionary',menu:'Menu',n_dict:'Dictionary',n_chk:'Text checker',n_quiz:'Quiz',n_reg:'Chat vs essay',n_res:'Research',n_src:'Sources',
+eyebrow:'Research project · Linguistics · Taraz, 2026',
+sub:'A dictionary of <b>{n}</b> English slang words in 7 types. Every word comes with its meaning, a real example and a formal alternative.',
+hs_ph:'Type a slang word, e.g. lowkey',hs_go:'Search',try:'Try:',st1:'slang entries',st2:'types',st3:'teenagers surveyed',
+d_e:'Dictionary',d_h:'The slang dictionary',d_l:'<b>{n}</b> entries in 7 types. Meanings of newer words were checked against recent slang guides; classic forms follow the project’s linguistic sources.',d_ru:'',
+g1h:'Search or pick a type',g1p:'Type a word or a meaning, or tap one of the 7 types below.',
+g2h:'Read the card',g2p:'Each card shows the meaning, an example message and the formal way to say it.',
+g3h:'Practise',g3p:'Check your own text, take the quiz, and compare yourself with our survey.',
+d_search_l:'Search slang',d_ph:'Search a word or a meaning…',d_now:'Trending now',so_az:'A–Z',so_type:'By type',so_now:'Trending first',
+all:'All',showing:'Showing {a} of {b}',more:'Show {k} more',none:'Nothing found for “{q}”.',clear:'Clear filters',dym:'Did you mean:',
+lab_m:'Meaning',lab_ex:'Example',lab_f:'Formal English',now:'Now',type_of:'Type {i} of 7',all_hint:'All 7 types are shown. Pick one above to see how it is formed.',
+d_note:'Slang depends on context and age. A word can be playful in one group and rude in another. When unsure, choose the formal version.',
+k_e:'Tool',k_h:'Slang checker for your essay',
+k_l:'Paste an English text. The checker finds slang, contractions and other informal habits, and suggests formal replacements. This is the “proofread for slang” step from our research.',
+k_in:'Your text',k_ph:'Paste or type English text here…',k_ex:'Try an example',k_clear:'Clear',k_res:'Result',k_apply:'Apply suggestions',
+k_none:'Paste a text on the left to see the result.',k_ok:'No informal features found.',k_issues:'{n} found in {w} words',
+k_l1:'Looks formal',k_l2:'Mostly formal',k_l3:'Needs editing',k_l4:'Very informal',
+k_man:'check by hand',k_del:'remove',
+k_note:'A simple dictionary-based check. Read the corrected text and fix the grammar yourself if needed.',
+kd_contr:'Contraction',kd_rep:'Repeated letters',kd_emo:'Emoji or emoticon',kd_punc:'Repeated punctuation',kd_caps:'ALL CAPS',kd_i:'Lowercase “i”',
+q_e:'Quiz',q_h:'Do you really know it?',q_l:'In our survey, 25% of teenagers misread “lowkey”. Pick a mode and answer 10 questions.',
+qm_a:'Meanings',qm_b:'Formal equivalent',qs_all:'All words',qs_now:'Trending now',
+qd_a:'10 questions: choose the right meaning of a slang word.',qd_b:'10 questions: choose the formal word that replaces the slang word in an essay.',
+q_start:'Start the quiz',q_n:'Question {i} of {n}',q_ask:'What does it mean?',q_ask2:'Which formal word replaces it in an essay?',q_ok:'Correct!',q_no:'Not quite.',q_next:'Next question',q_end:'See my score',
+q_score:'Your score',q_again:'Play again',q_rev:'Words to review',q_open:'Open the dictionary',best:'Best score: {s}/{n}',newbest:'New best score!',
+q_t4:'Slang fluent. You switch registers like a pro.',q_t3:'Almost there. A few words to review.',q_t2:'Getting there. Browse the dictionary and try again.',q_t1:'Great start. The dictionary is one click away.',
+c_e:'Registers',c_h:'Chat vs essay',c_l:'The same message sounds different in a chat and in formal writing. Tap a highlighted word to open it in the dictionary.',
+reg_t:'One message, two registers',chat:'Chat',essay:'Essay',next_ex:'Next example',tag_chat:'Group chat',tag_essay:'Formal English',
+hint_chat:'Tap a highlighted word to look it up.',hint_essay:'Formal English: full forms, no slang, neutral tone.',
+c_chat:'In chat',c_ess:'In an essay',c_rule:'Formal English avoids contractions, slang and “you” addressed to the reader.',c_proof:'Proofread for four things',
+p1h:'Spelling',p1p:'u, gr8, wiv and other textisms slip in under time pressure.',
+p2h:'Grammar and syntax',p2p:'Fragments, run-on sentences and missing auxiliary verbs.',
+p3h:'Vocabulary',p3p:'Replace lowkey, cap, mid with slightly, untruthful, mediocre.',
+p4h:'Punctuation and capitals',p4p:'No all-lowercase text, no soooo, no !!!.',
+r_e:'Our research',r_h:'What 28 teenagers told us',r_l:'An anonymous Google Forms survey of teenage learners of English, mostly 14 years old (89.3%).',
+t1:'teenage respondents',t2:'use slang often or always on social media',t3:'meet slang mostly on TikTok',t4:'forgot a formal word because of slang, or are not sure',t5:'misunderstood “lowkey”',t6:'correctly decoded IDK',
+ch1:'Slang online vs. in school writing',ch1s:'Share of respondents by how often they use English slang.',
+ch2:'Where teens meet slang',ch2s:'Platform where respondents meet English slang most often.',
+ch3:'Which type they use most',ch3s:'Type of slang respondents use most often.',
+ch4:'Forgot a formal word because of its slang version?',ch4s:'57.1% answered yes or not sure.',
+ch5:'What does “lowkey” mean?',ch5s:'The right answer is “somewhat / secretly”.',
+k_soc:'Social media',k_sch:'School writing',nv:'Never',ra:'Rarely',so:'Sometimes',of:'Often',al:'Always',
+tt:'TikTok',ig:'Instagram',yt:'YouTube',gm:'Games',wt:'WhatsApp / Telegram',
+ty1:'Abbreviations (LOL, BTW, IDK)',ty2:'Memes and viral phrases',ty3:'Shortened words (gonna, wanna)',ty4:'Emojis and reaction words',ty5:'Internet expressions (lowkey, no cap, fr)',
+yes:'Yes',ns:'Not sure',no:'No',lk1:'Somewhat / secretly',lk2:'Immediately',lk3:'Completely',correct:'Correct',
+r_v:'Slang is not “bad English”. What decides the outcome is register awareness: knowing when to switch.',
+r_lim_h:'Limits',r_lim:'The sample is small and similar (28 teenagers, mostly 14) and the answers are self-reported. The survey shows habits and opinions, not cause and effect.',
+po_h:'How do you compare with our 28 teens?',po_l:'Answer four questions from our survey and see how the 28 respondents answered.',
+po_q1:'How often do you use English slang on social media?',po_q2:'How often do you use English slang in school writing?',po_q3:'Have you forgotten a formal English word because you were used to its slang version?',po_q4:'Where do you meet English slang most often?',
+you:'You',of28:'{n} of 28',po_n:'Your answers are not saved or sent anywhere.',
+a_e:'About',a_h:'About the project',a_t:'Topic',a_au:'Authors',a_sv:'Scientific supervisor',a_sv2:'English teacher',a_sc:'School',a_sec:'Section',a_sec2:'Linguistics · Taraz, 2026',
+a_how:'How the dictionary was made',
+a1:'The 7 types follow the classification in Chapter 1.1 of the project: acronyms, abbreviations, letter and number substitution, respellings, new meanings, graphic devices and blends.',
+a2:'Meanings of newer words were checked against recent slang guides; classic forms follow the project’s linguistic sources.',
+a3:'“Now” marks words that are active among teens in 2025–26. Offensive or adult terms were left out on purpose.',
+a_bib:'Sources',a_cur:'Recent slang guides used to check newer words',f1:'Research project',f2:'Slang changes fast: some entries may fade or shift.'
+},
+ru:{
+skip:'Перейти к словарю',menu:'Меню',n_dict:'Словарь',n_chk:'Проверка текста',n_quiz:'Квиз',n_reg:'Чат и эссе',n_res:'Исследование',n_src:'Источники',
+eyebrow:'Исследовательский проект · Лингвистика · Тараз, 2026',
+sub:'Словарь из <b>{n}</b> английских слэнгов в 7 типах. У каждого слова есть значение, пример из жизни и формальный вариант.',
+hs_ph:'Введите слэнг, например lowkey',hs_go:'Найти',try:'Попробуйте:',st1:'слэнгов в словаре',st2:'типов',st3:'подростков в опросе',
+d_e:'Словарь',d_h:'Словарь слэнга',d_l:'<b>{n}</b> слов и выражений в 7 типах. Значения новых слов сверены с актуальными справочниками слэнга, классические формы опираются на лингвистические источники проекта.',
+d_ru:'Слэнги остаются английскими. На русском даны только объяснения.',
+g1h:'Найдите или выберите тип',g1p:'Введите слово или значение либо нажмите на один из 7 типов ниже.',
+g2h:'Читайте карточку',g2p:'На карточке: значение, пример сообщения и формальный вариант.',
+g3h:'Практикуйтесь',g3p:'Проверьте свой текст, пройдите квиз и сравните себя с нашим опросом.',
+d_search_l:'Поиск по слэнгу',d_ph:'Найдите слово или значение…',d_now:'Сейчас в тренде',so_az:'A–Z',so_type:'По типу',so_now:'Сначала новые',
+all:'Все',showing:'Показано {a} из {b}',more:'Показать ещё {k}',none:'Ничего не найдено по запросу «{q}».',clear:'Сбросить фильтры',dym:'Возможно, вы искали:',
+lab_m:'Значение',lab_ex:'Пример',lab_f:'Формальный английский',now:'Сейчас',type_of:'Тип {i} из 7',all_hint:'Показаны все 7 типов. Выберите один выше, чтобы увидеть, как он образуется.',
+d_note:'Слэнг зависит от контекста и возраста. Одно и то же слово в одной компании звучит шутливо, а в другой грубо. Если сомневаетесь, выбирайте формальный вариант.',
+k_e:'Инструмент',k_h:'Проверка эссе на слэнг',
+k_l:'Вставьте английский текст. Программа найдёт слэнг, сокращённые формы и другие неформальные привычки и предложит формальные замены. Это шаг «проверь текст на слэнг» из нашего исследования.',
+k_in:'Ваш текст',k_ph:'Вставьте или напишите английский текст…',k_ex:'Пример текста',k_clear:'Очистить',k_res:'Результат',k_apply:'Применить замены',
+k_none:'Вставьте текст слева, чтобы увидеть результат.',k_ok:'Неформальных признаков не найдено.',k_issues:'Найдено: {n} в {w} словах',
+k_l1:'Выглядит формально',k_l2:'В основном формально',k_l3:'Нужна правка',k_l4:'Очень неформально',
+k_man:'проверьте вручную',k_del:'удалить',
+k_note:'Простая проверка по словарю. Прочитайте исправленный текст и при необходимости поправьте грамматику сами.',
+kd_contr:'Сокращённая форма',kd_rep:'Повтор букв',kd_emo:'Эмодзи или смайлик',kd_punc:'Повтор знаков',kd_caps:'Все заглавные',kd_i:'«i» строчной',
+q_e:'Квиз',q_h:'А вы точно знаете?',q_l:'В нашем опросе 25% подростков неверно поняли «lowkey». Выберите режим и ответьте на 10 вопросов.',
+qm_a:'Значения',qm_b:'Формальный вариант',qs_all:'Все слова',qs_now:'Сейчас в тренде',
+qd_a:'10 вопросов: выберите правильное значение слэнга.',qd_b:'10 вопросов: выберите формальное слово, которое заменит слэнг в эссе.',
+q_start:'Начать квиз',q_n:'Вопрос {i} из {n}',q_ask:'Что это значит?',q_ask2:'Чем это заменить в эссе?',q_ok:'Верно!',q_no:'Не совсем.',q_next:'Следующий вопрос',q_end:'Мой результат',
+q_score:'Ваш результат',q_again:'Играть снова',q_rev:'Слова для повторения',q_open:'Открыть словарь',best:'Лучший результат: {s}/{n}',newbest:'Новый рекорд!',
+q_t4:'Вы свободно говорите на слэнге и легко переключаете регистры.',q_t3:'Почти идеально. Осталось повторить несколько слов.',q_t2:'Хороший путь. Загляните в словарь и попробуйте ещё раз.',q_t1:'Отличное начало. Словарь совсем рядом.',
+c_e:'Регистры',c_h:'Чат и эссе',c_l:'Одно и то же сообщение звучит по-разному в чате и в формальном тексте. Нажмите на выделенное слово, чтобы открыть его в словаре.',
+reg_t:'Одно сообщение, два регистра',chat:'Чат',essay:'Эссе',next_ex:'Другой пример',tag_chat:'Чат с друзьями',tag_essay:'Формальный английский',
+hint_chat:'Нажмите на выделенное слово, чтобы найти его в словаре.',hint_essay:'Формальный английский: полные формы, без слэнга, нейтральный тон.',
+c_chat:'В чате',c_ess:'В эссе',c_rule:'В формальном английском нет сокращённых форм, слэнга и обращения «you» к читателю.',c_proof:'Проверьте четыре вещи',
+p1h:'Орфография',p1p:'u, gr8, wiv и другие сокращения «просачиваются» под давлением времени.',
+p2h:'Грамматика и синтаксис',p2p:'Обрывки предложений, слишком длинные цепочки и пропущенные вспомогательные глаголы.',
+p3h:'Лексика',p3p:'Замените lowkey, cap, mid на slightly, untruthful, mediocre.',
+p4h:'Пунктуация и заглавные',p4p:'Без текста только строчными, без soooo, без !!!.',
+r_e:'Наше исследование',r_h:'Что рассказали 28 подростков',r_l:'Анонимный опрос в Google Forms среди подростков, изучающих английский; в основном 14 лет (89,3%).',
+t1:'подростков в опросе',t2:'часто или всегда используют слэнг в соцсетях',t3:'встречают слэнг в основном в TikTok',t4:'забывали формальное слово из-за слэнга или не уверены',t5:'неверно поняли «lowkey»',t6:'правильно расшифровали IDK',
+ch1:'Слэнг в соцсетях и в школьных работах',ch1s:'Доля респондентов по частоте использования английского слэнга.',
+ch2:'Где подростки встречают слэнг',ch2s:'Платформа, где респонденты чаще всего видят английский слэнг.',
+ch3:'Какой тип используют чаще всего',ch3s:'Тип слэнга, который респонденты используют чаще всего.',
+ch4:'Забывали формальное слово из-за слэнгового?',ch4s:'57,1% ответили «да» или «не уверен».',
+ch5:'Что означает «lowkey»?',ch5s:'Правильный ответ: «отчасти, тайно».',
+k_soc:'Соцсети',k_sch:'Школьные работы',nv:'Никогда',ra:'Редко',so:'Иногда',of:'Часто',al:'Всегда',
+tt:'TikTok',ig:'Instagram',yt:'YouTube',gm:'Игры',wt:'WhatsApp / Telegram',
+ty1:'Аббревиатуры (LOL, BTW, IDK)',ty2:'Мемы и вирусные фразы',ty3:'Сокращённые слова (gonna, wanna)',ty4:'Эмодзи и слова-реакции',ty5:'Интернет-выражения (lowkey, no cap, fr)',
+yes:'Да',ns:'Не уверен',no:'Нет',lk1:'Отчасти, тайно',lk2:'Немедленно',lk3:'Полностью',correct:'Верно',
+r_v:'Слэнг — это не «плохой английский». Решает умение переключать регистры: знать, когда и как.',
+r_lim_h:'Ограничения',r_lim:'Выборка небольшая и однородная (28 подростков, в основном 14 лет), а ответы даны со слов респондентов. Опрос показывает привычки и мнения, а не причинно-следственную связь.',
+po_h:'А вы похожи на наших 28 подростков?',po_l:'Ответьте на четыре вопроса из нашего опроса и посмотрите, как ответили 28 респондентов.',
+po_q1:'Как часто вы используете английский слэнг в соцсетях?',po_q2:'Как часто вы используете английский слэнг в школьных работах?',po_q3:'Забывали ли вы формальное английское слово, потому что привыкли к его слэнговому варианту?',po_q4:'Где вы чаще всего встречаете английский слэнг?',
+you:'Вы',of28:'{n} из 28',po_n:'Ваши ответы нигде не сохраняются и не отправляются.',
+a_e:'О нас',a_h:'О проекте',a_t:'Тема',a_au:'Авторы',a_sv:'Научный руководитель',a_sv2:'учитель английского языка',a_sc:'Школа',a_sec:'Секция',a_sec2:'Лингвистика · Тараз, 2026',
+a_how:'Как создан словарь',
+a1:'7 типов взяты из классификации в главе 1.1 проекта: акронимы, сокращения, замена букв и цифр, изменённое написание, новые значения, графические средства и слова-слияния.',
+a2:'Значения новых слов сверены с актуальными справочниками слэнга; классические формы опираются на лингвистические источники проекта.',
+a3:'Метка «Сейчас» отмечает слова, активные среди подростков в 2025–26. Грубые и «взрослые» выражения сознательно не включены.',
+a_bib:'Источники',a_cur:'Актуальные справочники слэнга для проверки новых слов',f1:'Исследовательский проект',f2:'Слэнг быстро меняется: часть слов может устареть или изменить значение.'
+}};
+const t=(k,v)=>{let s=(T[lang][k]??T.en[k]??k);if(v)for(const x in v)s=s.split('{'+x+'}').join(v[x]);return s};
+
+const TYPES=[
+{s:{en:'Acronyms',ru:'Акронимы'},full:{en:'Acronyms and initialisms',ru:'Акронимы и инициализмы'},d:{en:'Formed from the first letters of a phrase, such as LOL, BRB and IDK. They let people send frequent phrases with minimal effort, and some, like LOL, now work as a friendly or softening tone marker rather than real laughter.',ru:'Образуются из первых букв фразы: LOL, BRB, IDK. Позволяют отправлять частые фразы с минимумом усилий; некоторые, как LOL, теперь служат дружелюбным или смягчающим маркером тона, а не настоящим смехом.'}},
+{s:{en:'Abbreviations',ru:'Сокращения'},full:{en:'Abbreviations and clippings',ru:'Сокращения и усечения'},d:{en:'An abbreviation keeps the most recognisable letters of a word (thx, pls). A clipping drops one or more syllables of a longer word (bro, fam). Both follow the principle of economy.',ru:'Аббревиатура сохраняет самые узнаваемые буквы слова (thx, pls). Усечение отбрасывает один или несколько слогов (bro, fam). Оба способа следуют принципу экономии.'}},
+{s:{en:'Letters & numbers',ru:'Буквы и цифры'},full:{en:'Letter and number substitution',ru:'Замена букв и цифр'},d:{en:'Letters or digits stand for sounds or whole syllables, following the rebus principle: gr8 (great), 2day (today), b4 (before), l8r (later), u (you), r (are).',ru:'Буквы или цифры заменяют звуки или целые слоги по принципу ребуса: gr8 (great), 2day (today), b4 (before), l8r (later), u (you), r (are).'}},
+{s:{en:'Respellings',ru:'Изменённое написание'},full:{en:'Phonetic and orthographic respellings',ru:'Фонетические и орфографические искажения'},d:{en:'Standard spelling is deliberately replaced by a form that imitates pronunciation or saves characters: gonna, wanna, gotta, skool, wiv.',ru:'Стандартное написание намеренно заменяют формой, которая копирует произношение или экономит символы: gonna, wanna, gotta, skool, wiv.'}},
+{s:{en:'New meanings',ru:'Новые значения'},full:{en:'Lexical innovation and semantic shift',ru:'Лексические новшества и сдвиг значения'},d:{en:'Existing words get new meanings or combine into new expressions. “Lowkey” (slightly, secretly) is the classic case. Such words often start in gaming, fandoms and social media trends before spreading.',ru:'Существующие слова получают новые значения или складываются в новые выражения. Классический случай — «lowkey» (слегка, тайно). Такие слова часто рождаются в играх, фандомах и соцсетях, а затем распространяются.'}},
+{s:{en:'Emoji & symbols',ru:'Эмодзи и символы'},full:{en:'Paralinguistic and graphic devices',ru:'Паралингвистические и графические средства'},d:{en:'Emoticons, emoji, letter repetition (soooo) and unusual capitals or punctuation. They do the work of gesture, face and intonation in text.',ru:'Смайлики, эмодзи, повтор букв (soooo), необычные заглавные и знаки препинания. В тексте они заменяют жесты, мимику и интонацию.'}},
+{s:{en:'Blends',ru:'Слова-слияния'},full:{en:'Blending',ru:'Слияние слов (блендинг)'},d:{en:'Parts of two words merge into one new word that keeps both meanings: vlog (video + blog), emoticon (emotion + icon), hangry (hungry + angry).',ru:'Части двух слов сливаются в одно новое слово, сохраняющее оба значения: vlog (video + blog), emoticon (emotion + icon), hangry (hungry + angry).'}}
+];
+
+/* ========= apply language ========= */
+function applyStatic(){
+  document.documentElement.lang=lang;
+  document.querySelectorAll('[data-i]').forEach(el=>{el.textContent=t(el.dataset.i)});
+  document.querySelectorAll('[data-ih]').forEach(el=>{el.innerHTML=t(el.dataset.ih,{n:E.length})});
+  document.querySelectorAll('[data-ip]').forEach(el=>{el.placeholder=t(el.dataset.ip)});
+  document.querySelectorAll('[data-lang]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.lang===lang)));
+}
+function setLang(l){lang=l;store.set('lol-lang-v2',l);applyStatic();renderAll()}
+document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+$('#menuB').addEventListener('click',e=>{const o=$('#links').classList.toggle('open');e.currentTarget.setAttribute('aria-expanded',String(o))});
+$('#links').addEventListener('click',e=>{if(e.target.closest('a')){$('#links').classList.remove('open');$('#menuB').setAttribute('aria-expanded','false')}});
+
+/* ========= hero ========= */
+const PREV=['lowkey','cap','rizz','cooked'];
+const TRY=['lowkey','rizz','ngl','cooked','gonna','💀'];
+function renderHero(){
+  $('#stN').textContent=E.length;
+  $('#pv').innerHTML=PREV.map(w=>{const e=findE(w);return `<button type="button" class="pv" data-q="${esc(e.w)}"><small>${esc(TYPES[e.t-1].s[lang])}</small><b lang="en">${esc(e.w)}</b><span>${esc(short(e))}</span></button>`}).join('');
+  $('#tryChips').innerHTML=TRY.map(w=>`<button type="button" data-q="${esc(w)}" lang="en">${esc(w)}</button>`).join('');
+}
+$('#pv').addEventListener('click',e=>{const b=e.target.closest('[data-q]');if(b)goSearch(b.dataset.q)});
+$('#tryChips').addEventListener('click',e=>{const b=e.target.closest('[data-q]');if(b)goSearch(b.dataset.q)});
+$('#hs').addEventListener('submit',e=>{e.preventDefault();goSearch($('#hq').value.trim())});
+
+/* ========= dictionary ========= */
+const full=e=>lang==='ru'?e.ru:e.en;
+const short=e=>full(e).split(/(?<=\.)\s+(?=[A-Z«])/)[0];
+const isSym=w=>!/[a-z0-9]/i.test(w);
+function cardHTML(e){
+  return `<article class="card"><header><span class="badge" style="--c:${TYPE_COLORS[e.t-1]}"><i></i>${esc(TYPES[e.t-1].s[lang])}</span>${e.now?`<span class="now">${esc(t('now'))}</span>`:''}</header>
+  <h3 class="word${isSym(e.w)?' sym':''}" lang="en">${esc(e.w)}</h3>
+  <div><span class="lab">${esc(t('lab_m'))}</span><p class="mean">${esc(full(e))}</p></div>
+  <div><span class="lab">${esc(t('lab_ex'))}</span><p class="bubble" lang="en">${esc(e.ex)}</p></div>
+  ${e.f?`<div class="formal"><span class="lab">${esc(t('lab_f'))}</span><p lang="en">${esc(e.f)}</p></div>`:''}</article>`;
+}
+const S={type:0,q:'',now:false,sort:'az',shown:36};const PAGE=36;
+const norm=s=>s.toLowerCase();
+const key=e=>{const w=norm(e.w);return /[a-z0-9]/.test(w)?w:'~'+w};
+function rank(e,q){const w=norm(e.w);if(w===q)return 0;if(w.startsWith(q))return 1;if(w.includes(q))return 2;if(norm(e.f).includes(q))return 3;return 4}
+function matches(e,q){return !q||norm(e.w).includes(q)||norm(e.en).includes(q)||norm(e.ru).includes(q)||norm(e.ex).includes(q)||norm(e.f).includes(q)}
+function filtered(ignoreType){
+  const q=norm(S.q.trim());
+  const r=E.filter(e=>(ignoreType||!S.type||e.t===S.type)&&(!S.now||e.now)&&matches(e,q));
+  if(q)r.sort((a,b)=>rank(a,q)-rank(b,q)||key(a).localeCompare(key(b)));
+  else if(S.sort==='type')r.sort((a,b)=>a.t-b.t||key(a).localeCompare(key(b)));
+  else if(S.sort==='now')r.sort((a,b)=>b.now-a.now||key(a).localeCompare(key(b)));
+  else r.sort((a,b)=>key(a).localeCompare(key(b)));
+  return r;
+}
+function lev(a,b){const m=a.length,n=b.length;if(Math.abs(m-n)>2)return 9;const d=Array.from({length:m+1},(_,i)=>[i,...Array(n).fill(0)]);for(let j=1;j<=n;j++)d[0][j]=j;for(let i=1;i<=m;i++)for(let j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return d[m][n]}
+function suggest(q){q=norm(q.trim());if(q.length<3)return[];return E.map(e=>({e,d:lev(q,norm(e.w))})).filter(x=>x.d<=2&&norm(x.e.w)!==q).sort((a,b)=>a.d-b.d).slice(0,4).map(x=>x.e.w)}
+function renderChips(){
+  const base=filtered(true);const cnt=Array(8).fill(0);base.forEach(e=>{cnt[e.t]++});
+  let h=`<button type="button" class="tchip" data-t="0" aria-pressed="${S.type===0}">${esc(t('all'))} <small>${base.length}</small></button>`;
+  TYPES.forEach((ty,i)=>{h+=`<button type="button" class="tchip" data-t="${i+1}" aria-pressed="${S.type===i+1}">${esc(ty.s[lang])} <small>${cnt[i+1]}</small></button>`});
+  $('#chips').innerHTML=h;
+}
+function renderPanel(){
+  if(!S.type){$('#tpanel').innerHTML=`<div class="tpanel"><p>${esc(t('all_hint'))}</p></div>`;return}
+  const ty=TYPES[S.type-1];
+  $('#tpanel').innerHTML=`<div class="tpanel"><span class="k">${esc(t('type_of',{i:S.type}))}</span><h3>${esc(ty.full[lang])}</h3><p>${esc(ty.d[lang])}</p></div>`;
+}
+function renderGrid(){
+  const r=filtered(false);const part=r.slice(0,S.shown);
+  $('#grid').innerHTML=part.map(cardHTML).join('');
+  $('#count').textContent=t('showing',{a:part.length,b:r.length});
+  const left=r.length-part.length,mb=$('#moreB');mb.hidden=left<=0;if(left>0)mb.textContent=t('more',{k:Math.min(PAGE,left)});
+  if(r.length){$('#emptyBox').innerHTML=''}else{
+    const sg=suggest(S.q);
+    $('#emptyBox').innerHTML=`<div class="empty"><p>${esc(t('none',{q:S.q}))}</p>${sg.length?`<div class="dym"><span>${esc(t('dym'))}</span>${sg.map(w=>`<button type="button" data-q="${esc(w)}" lang="en">${esc(w)}</button>`).join('')}</div>`:''}<button type="button" class="btn solid" id="clr">${esc(t('clear'))}</button></div>`;
+  }
+  $('#qx').hidden=!S.q;
+}
+function renderDict(){renderChips();renderPanel();renderGrid()}
+const reset=()=>{S.shown=PAGE};
+$('#q').addEventListener('input',e=>{S.q=e.target.value;reset();renderDict()});
+$('#qx').addEventListener('click',()=>{S.q='';$('#q').value='';reset();renderDict();$('#q').focus()});
+$('#nowTg').addEventListener('click',e=>{S.now=!S.now;e.currentTarget.setAttribute('aria-pressed',String(S.now));reset();renderDict()});
+$('#sort').addEventListener('change',e=>{S.sort=e.target.value;reset();renderDict()});
+$('#chips').addEventListener('click',e=>{const b=e.target.closest('.tchip');if(!b)return;S.type=+b.dataset.t;reset();renderDict();const nb=document.querySelector('.tchip[data-t="'+S.type+'"]');if(nb)nb.focus({preventScroll:true})});
+$('#moreB').addEventListener('click',()=>{S.shown+=PAGE;renderGrid()});
+$('#emptyBox').addEventListener('click',e=>{
+  if(e.target.id==='clr'){S.q='';S.type=0;S.now=false;$('#q').value='';$('#nowTg').setAttribute('aria-pressed','false');reset();renderDict()}
+  const b=e.target.closest('[data-q]');if(b)goSearch(b.dataset.q);
+});
+function goSearch(q){
+  S.q=q;S.type=0;S.now=false;$('#nowTg').setAttribute('aria-pressed','false');$('#q').value=q;reset();renderDict();
+  $('#tools').scrollIntoView({behavior:'smooth',block:'start'});
+}
+document.addEventListener('keydown',e=>{
+  if(e.key==='/'&&!/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)){e.preventDefault();$('#q').focus();$('#tools').scrollIntoView({behavior:'smooth'})}
+});
+
+/* ========= text checker ========= */
+const CHK=`lol|∅|1
+lmao|∅|1
+rofl|∅|1
+omg|∅|1
+brb|∅|1
+btw|incidentally,|1
+tbh|frankly,|1
+idk|I do not know|1
+idc|I have no preference|1
+imo|in my opinion|1
+imho|in my opinion|1
+ngl|honestly,|1
+tysm|thank you very much|1
+smh|∅|1
+irl|in person|1
+gtg|I have to leave|1
+ttyl|I will speak with you later|1
+rn|currently|1
+jk|∅|1
+nvm|never mind|1
+ikr|∅|1
+icl|honestly,|1
+ong|∅|1
+fr|truly|1
+tbf|to be fair,|1
+fwiw|for what it is worth,|1
+wdym|what do you mean|1
+lmk|please let me know|1
+tmi|∅|1
+thx|thank you|2
+pls|please|2
+plz|please|2
+bro|friend|2
+fam|friends|2
+bestie|close friend|2
+cuz|because|2
+bc|because|2
+convo|conversation|2
+obvi|obviously|2
+totes|totally|2
+probs|probably|2
+def|definitely|2
+legit|genuine|2
+fave|favorite|2
+ppl|people|2
+pic|photograph|2
+insta|Instagram|2
+sus|suspicious|2
+bday|birthday|2
+congrats|congratulations|2
+rando|unknown person|2
+adorbs|adorable|2
+perf|perfect|2
+tmrw|tomorrow|2
+w/o|without|2
+w/|with|2
+delulu|unrealistic|2
+gr8|great|3
+2day|today|3
+2nite|tonight|3
+2morrow|tomorrow|3
+2moro|tomorrow|3
+b4|before|3
+l8r|later|3
+u|you|3
+ur|your|3
+4ever|forever|3
+any1|anyone|3
+sum1|someone|3
+m8|friend|3
+w8|wait|3
+h8|hate|3
+ez|easy|3
+cya|goodbye|3
+4u|for you|3
+10q|thank you|3
+gonna|going to|4
+wanna|want to|4
+gotta|have to|4
+ain't|is not|4
+gimme|give me|4
+lemme|let me|4
+kinda|somewhat|4
+sorta|somewhat|4
+dunno|do not know|4
+y'all|all of you|4
+tryna|trying to|4
+finna|about to|4
+outta|out of|4
+a lotta|a lot of|4
+lotta|a lot of|4
+skool|school|4
+wiv|with|4
+kewl|cool|4
+luv|love|4
+thru|through|4
+nite|night|4
+tho|though|4
+lil|little|4
+smol|small|4
+bruh|∅|4
+doggo|dog|4
+lowkey|somewhat|5
+highkey|very|5
+no cap|truthfully|5
+mid|mediocre|5
+rizz|charm|5
+bussin|excellent|5
+cringe|embarrassing|5
+vibes|atmosphere|5
+vibe|atmosphere|5
+glow-up|transformation|5
+yap|talk at length|5
+yapping|talking at length|5
+ghosting|ending contact|5
+touch grass|take a break from screens|5
+cheugy|outdated|5
+gatekeep|withhold|5
+periodt|∅|5
+brain rot|low-quality content|5`.trim().split('\n').map(l=>{const p=l.split('|');return{t:p[0],r:p[1]==='∅'?'':p[1],ty:+p[2]}});
+const CHKMAP=new Map(CHK.map(x=>[x.t.toLowerCase(),x]));
+const CONTR={"can't":"cannot","don't":"do not","doesn't":"does not","didn't":"did not","won't":"will not","isn't":"is not","aren't":"are not","wasn't":"was not","weren't":"were not","haven't":"have not","hasn't":"has not","hadn't":"had not","wouldn't":"would not","couldn't":"could not","shouldn't":"should not","i'm":"I am","i've":"I have","i'll":"I will","we're":"we are","they're":"they are","you're":"you are","we've":"we have","they've":"they have","you've":"you have","we'll":"we will","they'll":"they will","you'll":"you will","it's":"it is","that's":"that is","there's":"there is","let's":"let us","what's":"what is"};
+const reEsc=s=>s.replace(/[.*+?^${}()|[\]\\\/]/g,'\\$&').replace(/'/g,"['’]");
+const LB="(?<![\\w'’])",LA="(?![\\w'’]|-(?=\\w)|\\.\\w)";
+const SLANG_RE=new RegExp(LB+"(?:"+CHK.map(x=>x.t).sort((a,b)=>b.length-a.length).map(reEsc).join('|')+")"+LA,'giu');
+const CONTR_RE=new RegExp(LB+"(?:"+Object.keys(CONTR).map(reEsc).join('|')+")(?![\\w'’])",'giu');
+const nrm=s=>s.toLowerCase().replace(/’/g,"'");
+const CAPS_OK=new Set(['NASA','UNESCO','UNICEF','NATO','ASEAN','COVID','TOEFL','IELTS','STEM','UEFA','FIFA','OPEC','OLED']);
+function analyze(text){
+  const sp=[];
+  for(const m of text.matchAll(SLANG_RE)){const x=CHKMAP.get(nrm(m[0]));if(x)sp.push({s:m.index,e:m.index+m[0].length,found:m[0],r:x.r,kind:'slang',ty:x.ty})}
+  for(const m of text.matchAll(CONTR_RE)){const r=CONTR[nrm(m[0])];if(r)sp.push({s:m.index,e:m.index+m[0].length,found:m[0],r,kind:'contr'})}
+  for(const m of text.matchAll(/(?<![\w'’.\-])i(?![\w'’.\-])/g))sp.push({s:m.index,e:m.index+1,found:'i',r:'I',kind:'i'});
+  for(const m of text.matchAll(/\b[a-z]*([a-z])\1{2,}[a-z]*\b/gi)){if(/^[ivx]+$/i.test(m[0])||/^w+$/i.test(m[0]))continue;sp.push({s:m.index,e:m.index+m[0].length,found:m[0],r:null,kind:'rep'})}
+  for(const m of text.matchAll(/[!?]{2,}/g))sp.push({s:m.index,e:m.index+m[0].length,found:m[0],r:m[0][0],kind:'punc'});
+  for(const m of text.matchAll(/\p{Extended_Pictographic}\uFE0F?/gu))sp.push({s:m.index,e:m.index+m[0].length,found:m[0],r:'',kind:'emo'});
+  for(const m of text.matchAll(/(?<!\w)(?:[:;=]-?[)(DPpOo\/\\|3]|<3|xD|XD|uwu|owo|\^_\^|T_T|-_-)(?!\w)/g))sp.push({s:m.index,e:m.index+m[0].length,found:m[0],r:'',kind:'emo'});
+  for(const m of text.matchAll(/\b[A-Z]{4,}\b/g)){if(CAPS_OK.has(m[0]))continue;sp.push({s:m.index,e:m.index+m[0].length,found:m[0],r:null,kind:'caps'})}
+  sp.sort((a,b)=>a.s-b.s||(b.e-b.s)-(a.e-a.s));
+  const out=[];let end=-1;for(const x of sp){if(x.s>=end){out.push(x);end=x.e}}
+  return out;
+}
+function fixText(text,spans){
+  let out='',pos=0,capNext=false;
+  const push=c=>{if(capNext){c=c.replace(/[a-z]/,m=>m.toUpperCase());if(/[a-zA-Z]/.test(c))capNext=false}out+=c};
+  for(const sp of spans){
+    push(text.slice(pos,sp.s));pos=sp.e;
+    if(sp.r===null){push(sp.found);continue}
+    const before=text.slice(0,sp.s);
+    const atStart=before.trim()===''||/([.!?]["'”’)\]]*\s+|\n\s*)$/.test(before);
+    let r=sp.r;
+    if(r===''){if(atStart){capNext=true;if(text[pos]===',')pos++}}
+    else{if(atStart)r=r[0].toUpperCase()+r.slice(1);if(r.endsWith(',')&&text[pos]===',')pos++;push(r)}
+  }
+  push(text.slice(pos));
+  return out.replace(/[ \t]{2,}/g,' ').replace(/[ \t]+([,.;:!?])/g,'$1').replace(/,\s*([.!?])/g,'$1').replace(/^[ \t,;]+/,'').replace(/[ \t]+$/,'');
+}
+const KIND_NAME={contr:'kd_contr',rep:'kd_rep',emo:'kd_emo',punc:'kd_punc',caps:'kd_caps',i:'kd_i'};
+const SAMPLE="ngl, my essay was lowkey mid bc i didn't study 2day lol!!! I'm gonna fix it tmrw, thx for ur help 😭";
+let ckSpans=[];
+function renderChecker(){
+  const text=$('#ckIn').value;
+  ckSpans=analyze(text);
+  const view=$('#ckView'),list=$('#ckList'),score=$('#ckScore'),apply=$('#ckApply');
+  if(!text.trim()){view.innerHTML=`<span class="empty-t">${esc(t('k_none'))}</span>`;list.innerHTML='';score.textContent='';apply.disabled=true;return}
+  let h='',pos=0;
+  for(const sp of ckSpans){
+    h+=esc(text.slice(pos,sp.s));pos=sp.e;
+    const tip=sp.r===null?t('k_man'):(sp.r===''?t('k_del'):sp.r);
+    h+=`<mark class="${sp.r===null?'m2':'m1'}" title="${esc(tip)}">${esc(sp.found)}</mark>`;
+  }
+  view.innerHTML=h+esc(text.slice(pos));
+  const words=text.trim().split(/\s+/).filter(Boolean).length,n=ckSpans.length,ratio=n/Math.max(words,1)*100;
+  const lbl=n===0?'k_l1':ratio<3?'k_l2':ratio<8?'k_l3':'k_l4';
+  score.innerHTML=`<span>${esc(n?t('k_issues',{n,w:words}):t('k_ok'))}</span><i><b style="width:${Math.min(100,ratio*7)}%"></b></i><span>${esc(t(lbl))}</span>`;
+  apply.disabled=!ckSpans.some(s=>s.r!==null);
+  const g=new Map();
+  ckSpans.forEach(sp=>{const k=sp.kind+'|'+sp.found.toLowerCase();if(!g.has(k))g.set(k,{...sp,n:0});g.get(k).n++});
+  const arrow='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B8DFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+  list.innerHTML=[...g.values()].map(x=>{
+    const cat=x.kind==='slang'?TYPES[x.ty-1].s[lang]:t(KIND_NAME[x.kind]);
+    const sug=x.r===null?`<span class="s man">${esc(t('k_man'))}</span>`:x.r===''?`<span class="s man">${esc(t('k_del'))}</span>`:`<span class="s" lang="en">${esc(x.r)}</span>`;
+    return `<div class="ck-item"><span class="f" lang="en">${esc(x.found)}${x.n>1?' ×'+x.n:''}</span>${arrow}${sug}<small>${esc(cat)}</small></div>`;
+  }).join('');
+}
+$('#ckIn').addEventListener('input',renderChecker);
+$('#ckEx').addEventListener('click',()=>{$('#ckIn').value=SAMPLE;renderChecker()});
+$('#ckClr').addEventListener('click',()=>{$('#ckIn').value='';renderChecker();$('#ckIn').focus()});
+$('#ckApply').addEventListener('click',()=>{const v=$('#ckIn').value;$('#ckIn').value=fixText(v,analyze(v));renderChecker()});
+
+/* ========= quiz ========= */
+const QWORDS=['lowkey','cap','mid','slay','ghosting','ick','touch grass','rizz','cooked','locked in','glow-up','rent free','FOMO','NGL','IRL','TL;DR','sus','bet','salty','shook','simp','gatekeep','spill the tea','brain rot','yap','glaze','fanum tax','GOAT','TMI','AFK','hangry','situationship','doomscrolling','red flag','hits different','say less','main character','cringe','delulu','crash out'];
+const NOWWORDS=['rizz','cooked','locked in','brain rot','yap','glaze','fanum tax','delulu','crash out','situationship','aura','chopped','larp','rage bait','canon event','era','unc','mewing'];
+const POOL=QWORDS.map(findE).filter(Boolean),NOWPOOL=NOWWORDS.map(findE).filter(Boolean);
+const REG=[['lowkey','somewhat'],['cap','untrue'],['mid','mediocre'],['slay','excel'],['idk','I do not know'],['gonna','going to'],['bc','because'],['u','you'],['tho','though'],['rn','currently'],['bro','my friend'],['sus','suspicious'],['thx','thank you'],['pls','please'],['gr8','great'],['b4','before'],['l8r','later'],['ngl','honestly'],['cooked','in serious trouble'],['locked in','fully concentrated'],['probs','probably'],['legit','genuine'],['ppl','people'],['convo','conversation'],['cringe','embarrassing'],['tmrw','tomorrow']];
+const QN=10,QM={mode:'a',scope:'all'};let Q=null;
+const bestKey=()=>'lol-best-'+QM.mode+'-'+(QM.mode==='a'?QM.scope:'x');
+function newQuiz(){
+  let qs;
+  if(QM.mode==='a'){
+    const pool=QM.scope==='now'?NOWPOOL:POOL;
+    const first=QM.scope==='all'?pool.find(e=>e.w==='lowkey'):null;
+    const list=(first?[first]:[]).concat(shuffle(pool.filter(e=>e!==first)).slice(0,QN-(first?1:0)));
+    qs=list.map(e=>({w:e.w,ask:'q_ask',e,ok:e.id,opts:shuffle([e,...shuffle(pool.filter(x=>x!==e)).slice(0,3)]).map(x=>({k:x.id,id:x.id}))}));
+  }else{
+    qs=shuffle(REG).slice(0,QN).map(([w,f])=>({w,ask:'q_ask2',e:findE(w),ok:f,f,opts:shuffle([f,...shuffle(REG.filter(r=>r[1]!==f).map(r=>r[1])).slice(0,3)]).map(x=>({k:x,txt:x}))}));
+  }
+  Q={qs,i:0,score:0,answered:false,missed:[]};
+}
+const optText=o=>o.txt!==undefined?o.txt:short(E[o.id]);
+function renderModes(){
+  const b=(m,s,k,on)=>`<button type="button" data-${m}="${s}" aria-pressed="${on}">${esc(t(k))}</button>`;
+  $('#qModes').innerHTML=`<div class="seg" role="group">${b('mode','a','qm_a',QM.mode==='a')}${b('mode','b','qm_b',QM.mode==='b')}</div>`+
+    (QM.mode==='a'?`<div class="seg" role="group">${b('scope','all','qs_all',QM.scope==='all')}${b('scope','now','qs_now',QM.scope==='now')}</div>`:'');
+}
+function renderQuiz(){
+  const box=$('#quizBox');
+  if(!Q){
+    const best=store.get(bestKey(),null);
+    box.innerHTML=`<p class="desc">${esc(t(QM.mode==='a'?'qd_a':'qd_b'))}</p>${best!==null?`<p class="desc">${esc(t('best',{s:best,n:QN}))}</p>`:''}<button type="button" class="btn primary" id="qStart">${esc(t('q_start'))}</button>`;return;
+  }
+  if(Q.i>=QN){
+    const s=Q.score,prev=store.get(bestKey(),null),nb=prev===null||s>prev;if(nb)store.set(bestKey(),s);
+    const tier=s>=9?'q_t4':s>=7?'q_t3':s>=4?'q_t2':'q_t1';
+    box.innerHTML=`<p class="q-ask">${esc(t('q_score'))}</p><p class="qscore">${s}<small>/${QN}</small></p><p style="margin-top:12px;font-size:1.1rem">${esc(t(tier))}${nb&&s>0?' '+esc(t('newbest')):''}</p>
+    ${Q.missed.length?`<h3 style="font-family:var(--f-display);font-weight:600;font-size:1.05rem;margin-top:24px">${esc(t('q_rev'))}</h3><div class="review">${Q.missed.map(e=>`<div><b lang="en">${esc(e.w)}</b> <span>${esc(full(e))}${e.f?' · '+esc(e.f):''}</span></div>`).join('')}</div>`:''}
+    <div class="q-actions"><button type="button" class="btn primary" id="qAgain">${esc(t('q_again'))}</button><a class="btn ghost" href="#dictionary">${esc(t('q_open'))}</a></div>`;return;
+  }
+  const q=Q.qs[Q.i],L='ABCD';
+  box.innerHTML=`<div class="q-meta"><span>${esc(t('q_n',{i:Q.i+1,n:QN}))}</span><span>${Q.score} / ${QN}</span></div>
+  <div class="prog" role="progressbar" aria-valuemin="0" aria-valuemax="${QN}" aria-valuenow="${Q.i}"><i style="width:${Q.i/QN*100}%"></i></div>
+  <p class="q-word" lang="en">${esc(q.w)}</p><p class="q-ask">${esc(t(q.ask))}</p>
+  <div class="opts">${q.opts.map((o,k)=>`<button type="button" class="opt" data-k="${esc(o.k)}"><b>${L[k]}</b><span${o.txt!==undefined?' lang="en"':''}>${esc(optText(o))}</span></button>`).join('')}</div><div id="fb"></div>`;
+  if(Q.answered)answer(Q.pick,true);
+}
+$('#qModes').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.mode)QM.mode=b.dataset.mode;if(b.dataset.scope)QM.scope=b.dataset.scope;Q=null;renderModes();renderQuiz()});
+$('#quizBox').addEventListener('click',e=>{
+  if(e.target.closest('#qStart')||e.target.closest('#qAgain')){newQuiz();renderQuiz();return}
+  const o=e.target.closest('.opt');
+  if(o&&Q&&!Q.answered){answer(o.dataset.k,false);return}
+  if(e.target.closest('#qNext')){Q.i++;Q.answered=false;renderQuiz()}
+});
+function answer(pickKey,replay){
+  {
+    Q.answered=true;Q.pick=pickKey;const q=Q.qs[Q.i];const ok=String(q.ok)===pickKey;
+    if(!replay){if(ok)Q.score++;else Q.missed.push(q.e)}
+    document.querySelectorAll('.opt').forEach(b=>{b.disabled=true;if(b.dataset.k===String(q.ok))b.classList.add('ok');else if(b.dataset.k===pickKey)b.classList.add('bad')});
+    const last=Q.i===QN-1;
+    const body=QM.mode==='a'?`<p><b lang="en">${esc(q.w)}</b>: ${esc(full(q.e))}</p><span class="bubble" lang="en">${esc(q.e.ex)}</span>${q.e.f?`<p class="fm" lang="en">${esc(q.e.f)}</p>`:''}`
+      :`<p><b lang="en">${esc(q.w)}</b> → <span class="fm" lang="en">${esc(q.f)}</span></p><p>${esc(full(q.e))}</p><span class="bubble" lang="en">${esc(q.e.ex)}</span>`;
+    $('#fb').innerHTML=`<div class="fb"><strong>${esc(t(ok?'q_ok':'q_no'))}</strong>${body}</div><div class="q-actions"><button type="button" class="btn primary" id="qNext">${esc(t(last?'q_end':'q_next'))}</button></div>`;
+    if(!replay)$('#qNext').focus({preventScroll:true});
+  }
+}
+
+/* ========= chat vs essay ========= */
+const EX=[
+ [["ngl","Honestly,","ngl"],[" the test was "],["lowkey","somewhat","lowkey"],[" "],["mid","mediocre","mid"],[", ",", and "],["idk","I do not know","idk"],[" why "],["i","I"],[" was "],["stressing","so anxious"],[" "],["fr","","fr"],["."]],
+ [["omg ","","omg"],["she","She"],[" "],["ate that","delivered an outstanding","ate"],[" presentation"],[", no cap, ",", and ","no cap"],["everyone was "],["shook","astonished","shook"],["."]],
+ [["lol ","","lol"],["i'm","I am"],[" "],["lowkey","somewhat","lowkey"],[" "],["cooked","in trouble","cooked"],[", ","; "],["gotta","I have to","gotta"],[" "],["lock in","concentrate","locked in"],[" "],["rn","now","rn"],[" "],["bc","because","bc"],[" the exam is "],["tmrw","tomorrow","tmrw"],["."]]
+];
+let exI=0,mode='chat';
+function renderMsg(){
+  $('#msg').innerHTML=EX[exI].map(tk=>{
+    const chat=tk[0],ess=tk.length>1?tk[1]:tk[0],q=tk[2];
+    if(mode==='chat')return q?`<button type="button" class="tok" data-q="${esc(q)}" lang="en">${esc(chat)}</button>`:esc(chat);
+    if(!ess)return '';
+    return q?`<span class="tok" lang="en">${esc(ess)}</span>`:esc(ess);
+  }).join('').replace(/\s+\./g,'.');
+}
+function swapMsg(){const st=$('#stage');st.classList.add('swap');setTimeout(()=>{renderMsg();st.classList.remove('swap')},160)}
+function setMode(m){
+  mode=m;$('#reg').dataset.mode=m;
+  document.querySelectorAll('.seg button[data-mode]').forEach(b=>{if(b.closest('#reg'))b.setAttribute('aria-pressed',String(b.dataset.mode===m))});
+  $('#stageTag').textContent=t(m==='chat'?'tag_chat':'tag_essay');$('#regHint').textContent=t(m==='chat'?'hint_chat':'hint_essay');swapMsg();
+}
+document.querySelectorAll('#reg .seg button').forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.mode)));
+$('#nextEx').addEventListener('click',()=>{exI=(exI+1)%EX.length;swapMsg()});
+$('#msg').addEventListener('click',e=>{const b=e.target.closest('.tok[data-q]');if(b)goSearch(b.dataset.q)});
+const PAIRS=[['lowkey','slightly / somewhat'],['cap','untrue'],['mid','mediocre'],['slay','excel'],['ngl','honestly'],['idk','I do not know'],['gonna','going to'],['bc','because'],['u','you'],['tho','though'],['rn','currently'],['tbh','frankly'],['bro','my friend'],['fr','truly'],['sus','suspicious'],['cooked','in serious trouble'],['locked in','fully concentrated'],['bussin','excellent']];
+function renderReg(){
+  $('#stageTag').textContent=t(mode==='chat'?'tag_chat':'tag_essay');$('#regHint').textContent=t(mode==='chat'?'hint_chat':'hint_essay');renderMsg();
+  const arrow='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+  $('#pairs').innerHTML=PAIRS.map(p=>`<button type="button" class="pair" data-q="${esc(p[0])}"><span class="c" lang="en">${esc(p[0])}</span>${arrow}<span class="e" lang="en">${esc(p[1])}</span></button>`).join('');
+  $('#proof').innerHTML=[1,2,3,4].map(i=>`<div><strong>${esc(t('p'+i+'h'))}</strong><span>${esc(t('p'+i+'p'))}</span></div>`).join('');
+}
+$('#pairs').addEventListener('click',e=>{const b=e.target.closest('.pair');if(b)goSearch(b.dataset.q)});
+
+/* ========= research ========= */
+const pct=v=>(lang==='ru'?String(v).replace('.',','):String(v))+'%';
+function bars(items,max){return `<div class="rows">${items.map(it=>`<div class="rw"><span class="l">${esc(it.l)}${it.ok?`<span class="ok-tag">${esc(t('correct'))}</span>`:''}</span><div class="bar"><div class="t"><i style="width:${it.v/max*100}%;--c:${it.c||'var(--royal)'}"></i></div><em>${pct(it.v)}</em></div></div>`).join('')}</div>`}
+function renderResearch(){
+  const tiles=[['28',t('t1'),0],['50%',t('t2'),1],[pct(82.1),t('t3'),0],[pct(57.1),t('t4'),1],['25%',t('t5'),0],['100%',t('t6'),0]];
+  $('#tiles').innerHTML=tiles.map(x=>`<div class="tile${x[2]?' hi':''}"><b>${x[0]}</b><span>${esc(x[1])}</span></div>`).join('');
+  const cats=[t('nv'),t('ra'),t('so'),t('of'),t('al')],soc=[7.1,14.3,28.6,32.1,17.9],sch=[50,21.4,17.9,3.6,7.1];
+  const paired=`<div class="key"><span><i style="background:var(--royal)"></i>${esc(t('k_soc'))}</span><span><i style="background:var(--sky)"></i>${esc(t('k_sch'))}</span></div><div class="rows">${cats.map((c,i)=>`<div class="rw"><span class="l">${esc(c)}</span><div class="tr"><div class="bar"><div class="t"><i style="width:${soc[i]/50*100}%;--c:var(--royal)"></i></div><em>${pct(soc[i])}</em></div><div class="bar"><div class="t"><i style="width:${sch[i]/50*100}%;--c:var(--sky)"></i></div><em>${pct(sch[i])}</em></div></div></div>`).join('')}</div>`;
+  const plat=bars([{l:t('tt'),v:82.1},{l:t('ig'),v:10.7},{l:t('yt'),v:3.6},{l:t('gm'),v:3.6},{l:t('wt'),v:0}],100);
+  const types=bars([{l:t('ty1'),v:28.6},{l:t('ty2'),v:25},{l:t('ty3'),v:21.4},{l:t('ty4'),v:14.3},{l:t('ty5'),v:10.7}],30);
+  const forgot=`<div class="stackb" role="img" aria-label="${esc(t('yes'))} 21.4%, ${esc(t('ns'))} 35.7%, ${esc(t('no'))} 42.9%"><i style="width:21.4%;background:var(--navy)">21%</i><i style="width:35.7%;background:var(--royal)">36%</i><i style="width:42.9%;background:var(--sky);color:var(--navy)">43%</i></div><div class="key"><span><i style="background:var(--navy)"></i>${esc(t('yes'))} ${pct(21.4)}</span><span><i style="background:var(--royal)"></i>${esc(t('ns'))} ${pct(35.7)}</span><span><i style="background:var(--sky)"></i>${esc(t('no'))} ${pct(42.9)}</span></div>`;
+  const low=bars([{l:t('lk1'),v:75,ok:1},{l:t('lk2'),v:14.3,c:'var(--sky)'},{l:t('lk3'),v:10.7,c:'var(--sky)'}],100);
+  const card=(h,s,body,w)=>`<div class="chart${w?' wide':''}"><h3>${esc(t(h))}</h3><p class="sub">${esc(t(s))}</p>${body}</div>`;
+  $('#charts').innerHTML=card('ch1','ch1s',paired,1)+card('ch2','ch2s',plat)+card('ch3','ch3s',types)+card('ch4','ch4s',forgot)+card('ch5','ch5s',low);
+}
+/* "compare yourself": counts of the 28 respondents */
+const POLL=[
+ {q:'po_q1',o:[['nv',2],['ra',4],['so',8],['of',9],['al',5]]},
+ {q:'po_q2',o:[['nv',14],['ra',6],['so',5],['of',1],['al',2]]},
+ {q:'po_q3',o:[['yes',6],['ns',10],['no',12]]},
+ {q:'po_q4',o:[['tt',23],['ig',3],['yt',1],['gm',1],['wt',0]]}
+];
+const PA={};
+function renderPoll(){
+  $('#poll').innerHTML=`<h3>${esc(t('po_h'))}</h3><p class="pl">${esc(t('po_l'))}</p>`+POLL.map((p,qi)=>{
+    const done=PA[qi]!==undefined;
+    return `<div class="pq"><h4>${esc(t(p.q))}</h4><div class="po">${p.o.map(([k,n],oi)=>{
+      const v=Math.round(n/28*1000)/10;
+      return `<button type="button" data-qi="${qi}" data-oi="${oi}" aria-pressed="${PA[qi]===oi}" ${done?'aria-disabled="true"':''}><span>${esc(t(k))}${PA[qi]===oi?`<span class="you">${esc(t('you'))}</span>`:''}</span>${done?`<span class="pt"><i style="width:${v}%"></i></span><em>${esc(t('of28',{n}))} · ${pct(v)}</em>`:'<span></span><span></span>'}</button>`;
+    }).join('')}</div></div>`;
+  }).join('')+`<p class="pn">${esc(t('po_n'))}</p>`;
+}
+$('#poll').addEventListener('click',e=>{const b=e.target.closest('button[data-qi]');if(!b)return;const qi=+b.dataset.qi;if(PA[qi]!==undefined)return;PA[qi]=+b.dataset.oi;renderPoll()});
+
+/* ========= in-page links (plain #anchors do not scroll inside the viewer frame) ========= */
+document.addEventListener('click',e=>{
+  const a=e.target.closest('a[href^="#"]');if(!a)return;
+  const id=a.getAttribute('href').slice(1);
+  e.preventDefault();
+  $('#links').classList.remove('open');$('#menuB').setAttribute('aria-expanded','false');
+  const el=id&&id!=='top'?document.getElementById(id):null;
+  if(el)el.scrollIntoView({behavior:'smooth',block:'start'});else window.scrollTo({top:0,behavior:'smooth'});
+});
+
+/* ========= misc + boot ========= */
+const tt=$('#toTop');
+window.addEventListener('scroll',()=>{tt.hidden=window.scrollY<900},{passive:true});
+tt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+function renderAll(){renderHero();renderDict();renderChecker();renderModes();renderQuiz();renderReg();renderResearch();renderPoll()}
+applyStatic();renderAll();
+
+</script>
+
+</body></html>
